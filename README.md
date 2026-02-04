@@ -8,7 +8,6 @@ Generar revenue para Lozano Tech a través de EZContact.
 
 ## Situación Actual
 - EZContact aporta ~$60K MXN/mes
-- Lozano Tech opera con -$41K utilidad mensual
 - Meta: 27 clientes nuevos de 100 prospectos
 
 ## Herramientas
