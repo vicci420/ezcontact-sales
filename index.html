@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EZContact Pipeline</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { 
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #0f1419;
+            color: #fff;
+            min-height: 100vh;
+            padding: 16px;
+        }
+        h1 { 
+            font-size: 24px; 
+            margin-bottom: 8px;
+            color: #fff;
+        }
+        .subtitle {
+            color: #71767b;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 12px;
+            margin-bottom: 24px;
+        }
+        .stat-card {
+            background: #16181c;
+            border-radius: 12px;
+            padding: 16px;
+            text-align: center;
+        }
+        .stat-number {
+            font-size: 32px;
+            font-weight: 700;
+            color: #1d9bf0;
+        }
+        .stat-label {
+            font-size: 12px;
+            color: #71767b;
+            margin-top: 4px;
+        }
+        .pipeline {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 12px;
+            margin-bottom: 24px;
+        }
+        .column {
+            background: #16181c;
+            border-radius: 12px;
+            padding: 12px;
+            min-height: 200px;
+        }
+        .column-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid #2f3336;
+        }
+        .column-title {
+            font-weight: 600;
+            font-size: 14px;
+        }
+        .column-count {
+            background: #2f3336;
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: 12px;
+        }
+        .lead-card {
+            background: #1e2125;
+            border-radius: 8px;
+            padding: 12px;
+            margin-bottom: 8px;
+            cursor: pointer;
+            transition: background 0.2s;
+            border-left: 3px solid transparent;
+        }
+        .lead-card:hover {
+            background: #2a2e33;
+        }
+        .lead-card.marketing { border-left-color: #f97316; }
+        .lead-card.reclutamiento { border-left-color: #8b5cf6; }
+        .lead-card.inmobiliaria { border-left-color: #10b981; }
+        .lead-card.eventos { border-left-color: #ec4899; }
+        .lead-card.salud { border-left-color: #06b6d4; }
+        .lead-name {
+            font-weight: 600;
+            font-size: 14px;
+            margin-bottom: 4px;
+        }
+        .lead-vertical {
+            font-size: 11px;
+            color: #71767b;
+            margin-bottom: 4px;
+        }
+        .lead-phone {
+            font-size: 12px;
+            color: #1d9bf0;
+        }
+        .vertical-filter {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 16px;
+            flex-wrap: wrap;
+        }
+        .filter-btn {
+            padding: 8px 16px;
+            border-radius: 20px;
+            border: 1px solid #2f3336;
+            background: transparent;
+            color: #fff;
+            cursor: pointer;
+            font-size: 13px;
+            transition: all 0.2s;
+        }
+        .filter-btn:hover, .filter-btn.active {
+            background: #1d9bf0;
+            border-color: #1d9bf0;
+        }
+        .filter-btn.marketing.active { background: #f97316; border-color: #f97316; }
+        .filter-btn.reclutamiento.active { background: #8b5cf6; border-color: #8b5cf6; }
+        .filter-btn.inmobiliaria.active { background: #10b981; border-color: #10b981; }
+        .filter-btn.eventos.active { background: #ec4899; border-color: #ec4899; }
+        .filter-btn.salud.active { background: #06b6d4; border-color: #06b6d4; }
+        .legend {
+            display: flex;
+            gap: 16px;
+            margin-bottom: 16px;
+            flex-wrap: wrap;
+        }
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 12px;
+            color: #71767b;
+        }
+        .legend-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 2px;
+        }
+        .dot-marketing { background: #f97316; }
+        .dot-reclutamiento { background: #8b5cf6; }
+        .dot-inmobiliaria { background: #10b981; }
+        .dot-eventos { background: #ec4899; }
+        .dot-salud { background: #06b6d4; }
+        .empty-state {
+            text-align: center;
+            padding: 24px;
+            color: #71767b;
+            font-size: 13px;
+        }
+        @media (max-width: 768px) {
+            .stats { grid-template-columns: repeat(3, 1fr); }
+            .pipeline { grid-template-columns: 1fr; }
+            .column { min-height: auto; }
+        }
+    </style>
+</head>
+<body>
+    <h1>🎯 EZContact Pipeline</h1>
+    <p class="subtitle">45 prospectos • Actualizado: 4 feb 2026</p>
+    
+    <div class="stats">
+        <div class="stat-card">
+            <div class="stat-number" id="total-nuevo">45</div>
+            <div class="stat-label">Nuevos</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number" id="total-contactado">0</div>
+            <div class="stat-label">Contactados</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number" id="total-interesado">0</div>
+            <div class="stat-label">Interesados</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number" id="total-demo">0</div>
+            <div class="stat-label">Demo</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number" id="total-cerrado">0</div>
+            <div class="stat-label">Cerrados</div>
+        </div>
+    </div>
+
+    <div class="legend">
+        <div class="legend-item"><div class="legend-dot dot-marketing"></div> Marketing (15)</div>
+        <div class="legend-item"><div class="legend-dot dot-reclutamiento"></div> Reclutamiento (8)</div>
+        <div class="legend-item"><div class="legend-dot dot-inmobiliaria"></div> Inmobiliarias (8)</div>
+        <div class="legend-item"><div class="legend-dot dot-eventos"></div> Eventos (8)</div>
+        <div class="legend-item"><div class="legend-dot dot-salud"></div> Salud (6)</div>
+    </div>
+
+    <div class="vertical-filter">
+        <button class="filter-btn active" data-filter="all">Todos</button>
+        <button class="filter-btn marketing" data-filter="marketing">Marketing</button>
+        <button class="filter-btn reclutamiento" data-filter="reclutamiento">Reclutamiento</button>
+        <button class="filter-btn inmobiliaria" data-filter="inmobiliaria">Inmobiliaria</button>
+        <button class="filter-btn eventos" data-filter="eventos">Eventos</button>
+        <button class="filter-btn salud" data-filter="salud">Salud</button>
+    </div>
+
+    <div class="pipeline">
+        <div class="column" id="col-nuevo">
+            <div class="column-header">
+                <span class="column-title">📥 Nuevo</span>
+                <span class="column-count" id="count-nuevo">45</span>
+            </div>
+            <div class="leads" id="leads-nuevo"></div>
+        </div>
+        <div class="column" id="col-contactado">
+            <div class="column-header">
+                <span class="column-title">📞 Contactado</span>
+                <span class="column-count" id="count-contactado">0</span>
+            </div>
+            <div class="leads" id="leads-contactado">
+                <div class="empty-state">Arrastra leads aquí</div>
+            </div>
+        </div>
+        <div class="column" id="col-interesado">
+            <div class="column-header">
+                <span class="column-title">🤝 Interesado</span>
+                <span class="column-count" id="count-interesado">0</span>
+            </div>
+            <div class="leads" id="leads-interesado">
+                <div class="empty-state">Arrastra leads aquí</div>
+            </div>
+        </div>
+        <div class="column" id="col-demo">
+            <div class="column-header">
+                <span class="column-title">🎯 Demo</span>
+                <span class="column-count" id="count-demo">0</span>
+            </div>
+            <div class="leads" id="leads-demo">
+                <div class="empty-state">Arrastra leads aquí</div>
+            </div>
+        </div>
+        <div class="column" id="col-cerrado">
+            <div class="column-header">
+                <span class="column-title">✅ Cerrado</span>
+                <span class="column-count" id="count-cerrado">0</span>
+            </div>
+            <div class="leads" id="leads-cerrado">
+                <div class="empty-state">Arrastra leads aquí</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const prospectos = [
+            // MARKETING - MTY
+            { id: 1, nombre: "Posición Uno", vertical: "marketing", telefono: "81 1916 0611", web: "posicionuno.com", ciudad: "MTY", etapa: "nuevo" },
+            { id: 2, nombre: "Mercanaut", vertical: "marketing", telefono: "", web: "mercanaut.mx", ciudad: "MTY", etapa: "nuevo" },
+            { id: 3, nombre: "Futurite", vertical: "marketing", telefono: "", web: "futurite.com", ciudad: "MTY", etapa: "nuevo" },
+            { id: 4, nombre: "Interius", vertical: "marketing", telefono: "", web: "interius.com.mx", ciudad: "MTY", etapa: "nuevo" },
+            { id: 5, nombre: "Backdoor Marketing", vertical: "marketing", telefono: "", web: "backdoor.com.mx", ciudad: "MTY", etapa: "nuevo" },
+            { id: 6, nombre: "VidalPRO Digital", vertical: "marketing", telefono: "", web: "vidalpro.mx", ciudad: "MTY", etapa: "nuevo" },
+            { id: 7, nombre: "Black360 Digital", vertical: "marketing", telefono: "", web: "black360digital.com", ciudad: "MTY", etapa: "nuevo" },
+            { id: 8, nombre: "GMB START", vertical: "marketing", telefono: "", web: "", ciudad: "MTY", etapa: "nuevo" },
+            // MARKETING - CDMX
+            { id: 9, nombre: "SUBE Agencia Digital", vertical: "marketing", telefono: "55 4169 6343", web: "subeagenciadigital.com", ciudad: "CDMX", etapa: "nuevo" },
+            { id: 10, nombre: "MCK Agency", vertical: "marketing", telefono: "", web: "mck.agency", ciudad: "CDMX", etapa: "nuevo" },
+            { id: 11, nombre: "Marketing 4U", vertical: "marketing", telefono: "", web: "marketing4u.com.mx", ciudad: "CDMX", etapa: "nuevo" },
+            { id: 12, nombre: "Atracción Digital", vertical: "marketing", telefono: "56 1066 2090", web: "atracciondigital.mx", ciudad: "CDMX", etapa: "nuevo" },
+            { id: 13, nombre: "Cocktail Marketing", vertical: "marketing", telefono: "", web: "cocktailmarketing.com.mx", ciudad: "CDMX", etapa: "nuevo" },
+            { id: 14, nombre: "DEC Marketing", vertical: "marketing", telefono: "", web: "decmarketing.mx", ciudad: "CDMX", etapa: "nuevo" },
+            { id: 15, nombre: "ABC Digital", vertical: "marketing", telefono: "", web: "abcdigital.mx", ciudad: "CDMX", etapa: "nuevo" },
+            // RECLUTAMIENTO
+            { id: 16, nombre: "HH Experts", vertical: "reclutamiento", telefono: "", web: "hhexperts.mx", ciudad: "MTY", etapa: "nuevo" },
+            { id: 17, nombre: "Taléntika", vertical: "reclutamiento", telefono: "", web: "talentika.mx", ciudad: "MTY", etapa: "nuevo" },
+            { id: 18, nombre: "IQUEST", vertical: "reclutamiento", telefono: "", web: "iquest.mx", ciudad: "MTY", etapa: "nuevo" },
+            { id: 19, nombre: "Job Solutions", vertical: "reclutamiento", telefono: "", web: "jobsol.com.mx", ciudad: "MTY", etapa: "nuevo" },
+            { id: 20, nombre: "Stigan", vertical: "reclutamiento", telefono: "", web: "stigan.com.mx", ciudad: "MTY", etapa: "nuevo" },
+            { id: 21, nombre: "MyS Consultores", vertical: "reclutamiento", telefono: "", web: "mysconsultores.net", ciudad: "MTY", etapa: "nuevo" },
+            { id: 22, nombre: "Liens Headhunting", vertical: "reclutamiento", telefono: "", web: "", ciudad: "MTY", etapa: "nuevo" },
+            { id: 23, nombre: "Manpower MTY", vertical: "reclutamiento", telefono: "", web: "", ciudad: "MTY", etapa: "nuevo" },
+            // INMOBILIARIAS
+            { id: 24, nombre: "San Pedro BR", vertical: "inmobiliaria", telefono: "", web: "sanpedrobr.com", ciudad: "MTY", etapa: "nuevo" },
+            { id: 25, nombre: "Arturo BR", vertical: "inmobiliaria", telefono: "", web: "arturobienesraices.com", ciudad: "MTY", etapa: "nuevo" },
+            { id: 26, nombre: "Investo", vertical: "inmobiliaria", telefono: "", web: "investo.com.mx", ciudad: "MTY", etapa: "nuevo" },
+            { id: 27, nombre: "Marmur BR", vertical: "inmobiliaria", telefono: "", web: "marmur.mx", ciudad: "MTY", etapa: "nuevo" },
+            { id: 28, nombre: "Hassaf BR", vertical: "inmobiliaria", telefono: "", web: "hassafbr.com", ciudad: "MTY", etapa: "nuevo" },
+            { id: 29, nombre: "Area BR", vertical: "inmobiliaria", telefono: "", web: "area-bienesraices.com", ciudad: "MTY", etapa: "nuevo" },
+            { id: 30, nombre: "Brown de México", vertical: "inmobiliaria", telefono: "81 8004 0250", web: "browndemexico.com.mx", ciudad: "MTY", etapa: "nuevo" },
+            { id: 31, nombre: "Inmobiliaria MHG", vertical: "inmobiliaria", telefono: "81 1050 6919", web: "inmobiliariamhg.com", ciudad: "MTY", etapa: "nuevo" },
+            // EVENTOS
+            { id: 32, nombre: "AXO Publicidad 360", vertical: "eventos", telefono: "", web: "axopublicidad.com", ciudad: "MTY", etapa: "nuevo" },
+            { id: 33, nombre: "Grupo Expert", vertical: "eventos", telefono: "", web: "grupoexpert.mx", ciudad: "MTY", etapa: "nuevo" },
+            { id: 34, nombre: "Grupo Mesarosa", vertical: "eventos", telefono: "", web: "grupomesarosa.com", ciudad: "MTY", etapa: "nuevo" },
+            { id: 35, nombre: "Nisua", vertical: "eventos", telefono: "", web: "nisua.com", ciudad: "MTY", etapa: "nuevo" },
+            { id: 36, nombre: "Nubox Marketing", vertical: "eventos", telefono: "", web: "nuboxmkt.mx", ciudad: "MTY", etapa: "nuevo" },
+            { id: 37, nombre: "Imagic Group", vertical: "eventos", telefono: "", web: "imagicgroup.com", ciudad: "MTY", etapa: "nuevo" },
+            { id: 38, nombre: "Villalty", vertical: "eventos", telefono: "", web: "", ciudad: "MTY", etapa: "nuevo" },
+            { id: 39, nombre: "Karamel Events", vertical: "eventos", telefono: "", web: "", ciudad: "MTY", etapa: "nuevo" },
+            // SALUD
+            { id: 40, nombre: "CERYA Clínica", vertical: "salud", telefono: "", web: "cerya.com.mx", ciudad: "MTY", etapa: "nuevo" },
+            { id: 41, nombre: "OCA Medical Center", vertical: "salud", telefono: "", web: "ocahospital.mx", ciudad: "MTY", etapa: "nuevo" },
+            { id: 42, nombre: "CAB Medical", vertical: "salud", telefono: "", web: "cabmedical.com", ciudad: "MTY", etapa: "nuevo" },
+            { id: 43, nombre: "Stem Solutions", vertical: "salud", telefono: "", web: "", ciudad: "MTY", etapa: "nuevo" },
+            { id: 44, nombre: "Centro Médico San Patricio", vertical: "salud", telefono: "", web: "", ciudad: "MTY", etapa: "nuevo" },
+            { id: 45, nombre: "Directorio Médico MX", vertical: "salud", telefono: "", web: "directoriomedicomx.com", ciudad: "MTY", etapa: "nuevo" }
+        ];
+
+        let currentFilter = 'all';
+
+        function renderLeads() {
+            const etapas = ['nuevo', 'contactado', 'interesado', 'demo', 'cerrado'];
+            etapas.forEach(etapa => {
+                const container = document.getElementById(`leads-${etapa}`);
+                const filtrados = prospectos.filter(p => 
+                    p.etapa === etapa && 
+                    (currentFilter === 'all' || p.vertical === currentFilter)
+                );
+                
+                if (filtrados.length === 0) {
+                    container.innerHTML = etapa === 'nuevo' 
+                        ? '<div class="empty-state">No hay leads en esta etapa</div>'
+                        : '<div class="empty-state">Arrastra leads aquí</div>';
+                } else {
+                    container.innerHTML = filtrados.map(p => `
+                        <div class="lead-card ${p.vertical}" draggable="true" data-id="${p.id}">
+                            <div class="lead-name">${p.nombre}</div>
+                            <div class="lead-vertical">${p.vertical.toUpperCase()} • ${p.ciudad}</div>
+                            ${p.telefono ? `<div class="lead-phone">📞 ${p.telefono}</div>` : ''}
+                            ${p.web ? `<div class="lead-phone">🌐 ${p.web}</div>` : ''}
+                        </div>
+                    `).join('');
+                }
+                
+                document.getElementById(`count-${etapa}`).textContent = filtrados.length;
+            });
+            
+            // Update totals
+            etapas.forEach(etapa => {
+                const total = prospectos.filter(p => p.etapa === etapa).length;
+                document.getElementById(`total-${etapa}`).textContent = total;
+            });
+        }
+
+        // Drag and Drop
+        document.addEventListener('dragstart', (e) => {
+            if (e.target.classList.contains('lead-card')) {
+                e.dataTransfer.setData('text/plain', e.target.dataset.id);
+            }
+        });
+
+        document.querySelectorAll('.column').forEach(col => {
+            col.addEventListener('dragover', (e) => e.preventDefault());
+            col.addEventListener('drop', (e) => {
+                e.preventDefault();
+                const id = parseInt(e.dataTransfer.getData('text/plain'));
+                const etapa = col.id.replace('col-', '');
+                const lead = prospectos.find(p => p.id === id);
+                if (lead) {
+                    lead.etapa = etapa;
+                    renderLeads();
+                    saveState();
+                }
+            });
+        });
+
+        // Filters
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                currentFilter = btn.dataset.filter;
+                renderLeads();
+            });
+        });
+
+        // Persistence
+        function saveState() {
+            const state = prospectos.map(p => ({ id: p.id, etapa: p.etapa }));
+            localStorage.setItem('ezcontact-pipeline', JSON.stringify(state));
+        }
+
+        function loadState() {
+            const saved = localStorage.getItem('ezcontact-pipeline');
+            if (saved) {
+                const state = JSON.parse(saved);
+                state.forEach(s => {
+                    const lead = prospectos.find(p => p.id === s.id);
+                    if (lead) lead.etapa = s.etapa;
+                });
+            }
+        }
+
+        loadState();
+        renderLeads();
+    </script>
+</body>
+</html>
