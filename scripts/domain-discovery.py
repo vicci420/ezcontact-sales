@@ -82,7 +82,31 @@ EXCLUDE_DOMAINS = {
     "wikipedia.org", "gobierno.mx", "gob.mx", "cdmx.gob.mx",
     "bing.com", "yahoo.com", "pinterest.com", "tiktok.com",
     "duckduckgo.com", "maps.google.com",
+    # Agregadores / Plataformas grandes (no son negocios PYME)
+    "ubereats.com", "rappi.com.mx", "rappi.com", "didi.mx", "didifood.mx",
+    "cornershop.com", "meituan.com", "foodpanda.com",
+    "booking.com", "airbnb.com", "expedia.com",
+    "clasesvip.com", "superprof.es", "tusclases.mx",
+    "doctoralia.com", "doctoralia.com.mx", "zocdoc.com",
+    "wix.com", "shopify.com", "squarespace.com", "wordpress.com",
+    "webnode.com", "jimdo.com", "godaddy.com",
+    "angi.com", "thumbtack.com", "workana.com", "freelancer.com",
+    "hotmart.com", "udemy.com", "coursera.com",
+    "groupon.com", "cuponidad.com",
+    "paginas.mx", "soyempresa.com", "donde.com.mx",
+    "despegar.com", "viajes.com",
+    "sortlist.mx", "clutch.co", "goodfirms.co",
+    "lp.resto.marketing",  # Agregador de restaurantes
 }
+
+# Palabras en dominio que indican plataforma/directorio (no negocio individual)
+EXCLUDE_KEYWORDS_IN_DOMAIN = [
+    "uber", "rappi", "didi", "cornershop", "booking", "airbnb",
+    "directorio", "directory", "paginas", "listado", "encuentra",
+    "busca", "comparador", "marketplace", "plataforma",
+    "wix", "shopify", "wordpress", "weebly",
+    "clasifik", "clasificado", "anunci",
+]
 
 
 def search_duckduckgo(query, max_results=8):
@@ -106,6 +130,8 @@ def search_duckduckgo(query, max_results=8):
             if not domain:
                 continue
             if any(excl in domain for excl in EXCLUDE_DOMAINS):
+                continue
+            if any(kw in domain for kw in EXCLUDE_KEYWORDS_IN_DOMAIN):
                 continue
             # Preferir dominios .mx o .com.mx
             full_url = f"https://www.{domain}/" if not raw.startswith('https://www.') else raw
