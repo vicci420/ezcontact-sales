@@ -101,6 +101,19 @@ DEMO_PATTERNS = [
     r'\bmartes|mi[eé]rcoles|jueves|viernes|lunes\b',  # menciona día
 ]
 
+# CALLBACK — piden llamada/teléfono
+CALLBACK_PATTERNS = [
+    r'\b(me\s+)?puedes\s+marcar\b',
+    r'\b(puedes\s+)?llamarme\b',
+    r'\bll[aá]mame\b',
+    r'\bme\s+das\s+tu\s+(n[uú]mero|tel[eé]fono|cel)\b',
+    r'\bme\s+contactas?\s+al\b',
+    r'\bpuedo\s+llamarte\b',
+    r'\bte\s+(marco|llamo)\b',
+    r'\bpor\s+tel[eé]fono\b',
+    r'\bescr[ií]beme\s+por\s+whatsapp\b',
+]
+
 # QUESTION — preguntas sobre el servicio
 QUESTION_PATTERNS = [
     r'\bcu[aá]nto\s+(cuesta|cobran|es el precio)\b',
@@ -162,6 +175,10 @@ def classify_reply(body: str) -> str:
         if re.search(p, text, re.IGNORECASE):
             return 'interested'
 
+    for p in CALLBACK_PATTERNS:
+        if re.search(p, text, re.IGNORECASE):
+            return 'callback'
+
     for p in QUESTION_PATTERNS:
         if re.search(p, text, re.IGNORECASE):
             return 'question'
@@ -211,6 +228,18 @@ Les comparto el link para agendar directamente en el horario que mejor les funci
 https://calendly.com/ezcontact/demo
 
 Cualquier duda estoy aquí.
+
+Saludos,
+Katia"""
+
+
+def draft_callback(sender_name: str) -> str:
+    name = sender_name or 'estimado'
+    return f"""Hola {name},
+
+¡Con mucho gusto! Puede contactarme directamente por WhatsApp al +52 55 2345 5698 o si prefiere le llamo yo a usted.
+
+¿Cuál es su disponibilidad?
 
 Saludos,
 Katia"""
@@ -351,7 +380,7 @@ def main():
     alerts     = []
     blacklisted = []
     stats = {'not_interested': 0, 'unsubscribe': 0, 'interested': 0,
-             'demo': 0, 'question': 0, 'unknown': 0, 'skipped': 0}
+             'demo': 0, 'callback': 0, 'question': 0, 'unknown': 0, 'skipped': 0}
 
     for env in envelopes:
         msg_id = str(env.get('id', ''))
@@ -395,17 +424,19 @@ def main():
             if not args.dry_run:
                 save_already_sent(already_sent)
 
-        elif category in ('interested', 'demo', 'question'):
+        elif category in ('interested', 'demo', 'callback', 'question'):
             # Generar draft
             if category == 'demo':
                 draft = draft_demo_confirm(sender_name)
+            elif category == 'callback':
+                draft = draft_callback(sender_name)
             elif category == 'interested':
                 draft = draft_interested(sender_name, biz_name)
             else:  # question
                 draft = draft_question(sender_name)
 
             alerts.append({
-                'priority': '🔴' if category == 'demo' else '🟡',
+                'priority': '🔴' if category in ('demo', 'callback') else '🟡',
                 'category': category,
                 'msg_id':   msg_id,
                 'sender':   sender_addr,
