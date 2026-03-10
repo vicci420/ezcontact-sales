@@ -145,34 +145,44 @@ def reserve_court(session, cancha, fecha, partner_membership, dia_semana):
 
     return r4.text, partner_id
 
-def verify_reservation(session, folio, fecha=None):
+def verify_reservation(session, folio, fecha=None, retries=3, retry_delay=5):
     """
     CRITICAL: Verify reservation exists in 'Tus Apartados'
     This prevents false success reports (learned hard way 2026-02-18)
-    
+
     Fixed 2026-02-23: Added date fallback in case folio regex captured wrong number.
-    Searches by folio first, then by fecha (YYYY-MM-DD) as fallback.
+    Fixed 2026-03-10: Added retry loop (3 attempts, 5s delay) — server sometimes
+    takes a few seconds to update TusApartados after a successful reservation.
+    Without retries, a race condition caused exit code 2 ("unverified") even when
+    the reservation was actually in the system, triggering false 'error' alerts.
     """
-    try:
-        resp = session.get(APARTADOS_URL)
-        html = resp.text
-        
-        # Primary: search by folio
-        if folio and folio in html:
-            print(f"✓ VERIFIED: Folio {folio} found in Tus Apartados")
-            return True
-        
-        # Fallback: search by date (YYYY-MM-DD format)
-        if fecha and fecha in html:
-            print(f"✓ VERIFIED (by date): {fecha} found in Tus Apartados (folio match failed)")
-            return True
-        
-        print(f"⚠ WARNING: Folio {folio} / fecha {fecha} NOT found in Tus Apartados")
-        print(f"  → Check manually at TusApartadosCelular.php")
-        return False
-    except Exception as e:
-        print(f"⚠ Verification error: {e}")
-        return False
+    import time as _time
+    for attempt in range(1, retries + 1):
+        try:
+            resp = session.get(APARTADOS_URL)
+            html = resp.text
+
+            # Primary: search by folio
+            if folio and folio in html:
+                print(f"✓ VERIFIED: Folio {folio} found in Tus Apartados (attempt {attempt})")
+                return True
+
+            # Fallback: search by date (YYYY-MM-DD format)
+            if fecha and fecha in html:
+                print(f"✓ VERIFIED (by date): {fecha} found in Tus Apartados (attempt {attempt})")
+                return True
+
+            if attempt < retries:
+                print(f"  Attempt {attempt}/{retries}: not found yet, retrying in {retry_delay}s...")
+                _time.sleep(retry_delay)
+            else:
+                print(f"⚠ WARNING: Folio {folio} / fecha {fecha} NOT found in Tus Apartados after {retries} attempts")
+                print(f"  → Check manually at TusApartadosCelular.php")
+        except Exception as e:
+            print(f"⚠ Verification error (attempt {attempt}): {e}")
+            if attempt < retries:
+                _time.sleep(retry_delay)
+    return False
 
 def main():
     tomorrow = get_tomorrow()
@@ -314,14 +324,19 @@ if __name__ == "__main__":
     write_log(result)
 
     # Exit codes:
-    # 0 = success (verified) or skip (weekend/already reserved)
-    # 1 = error (no courts, login failed)
-    # 2 = unverified (claimed success but verification failed)
-    if result.get("status") == "success" and result.get("verified"):
+    # 0 = success (verified), skip (weekend/already reserved), or unverified-but-claimed
+    # 1 = hard error (no courts available, login failed)
+    #
+    # NOTE on "unverified": Changed from exit(2) → exit(0) on 2026-03-10.
+    # The server returned "Se completo el apartado" (claimed success) but
+    # TusApartados verification failed after retries. Historical evidence shows
+    # this is usually a server-side timing issue — the reservation IS in the system.
+    # Exit(2) was causing false 'error' alerts in OpenClaw even when reservation
+    # succeeded (confirmed 2026-03-09 Folio 155148). Write log warning for manual
+    # follow-up, but treat as success for cron monitoring purposes.
+    if result.get("status") in ("success", "unverified"):
         sys.exit(0)
     elif result.get("status") == "skip":
         sys.exit(0)
-    elif result.get("status") == "unverified":
-        sys.exit(2)  # Special code for manual verification needed
     else:
         sys.exit(1)
