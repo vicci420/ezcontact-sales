@@ -48,6 +48,11 @@ PARTNER_OVERRIDES = {
     "2026-03-09": ("Rafael Navarro Dávalos", "4425", None),  # Lunes 9 mar — override Mauricio
 }
 
+# One-time court override by date → preferred court moves to front
+COURT_OVERRIDES = {
+    "2026-03-11": 2,  # Miércoles 11 mar — cancha 2 en lugar de 3
+}
+
 # Court priority per weekday (0=Mon, 1=Tue, 2=Wed, 3=Thu, 4=Fri)
 # Preferred court first, then fallbacks
 COURT_PRIORITY_BY_DAY = {
@@ -193,7 +198,13 @@ def main():
     print(f"Date: {fecha} ({dia})")
     print(f"Time: 07:00")
     print(f"Partner: {partner_name} ({partner_membership})")
-    court_priority = COURT_PRIORITY_BY_DAY[weekday]
+    court_priority = list(COURT_PRIORITY_BY_DAY[weekday])
+    if fecha in COURT_OVERRIDES:
+        preferred = COURT_OVERRIDES[fecha]
+        if preferred in court_priority:
+            court_priority.remove(preferred)
+        court_priority.insert(0, preferred)
+        print(f"⚡ Court override activo para {fecha}: cancha {preferred} primero")
     print(f"Court priority: {court_priority} (preferred: {court_priority[0]})")
     print()
 
