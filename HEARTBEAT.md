@@ -27,63 +27,63 @@ Después de cualquier reservación de tennis:
 
 ---
 
-## 🚨 Pendientes urgentes — reportar a Vicci (18 mar 2026)
+## 🚨 Pendientes urgentes — reportar a Vicci (23 mar 2026)
 
 ### 🔴 PRs para mergear — 24 ABIERTOS
 
 | PR | Días | Descripción | Urgencia |
 |----|------|-------------|----------|
-| [#24](https://github.com/vicci420/ezcontact-sales/pull/24) | 8 | lead-finder site crawl (fix 0 leads bug) | 🔴 CRÍTICO — sin esto, 0 leads/noche |
-| [#19](https://github.com/vicci420/ezcontact-sales/pull/19) | 13 | tennis-reservation a master | 🔴 CRÍTICO — cron activo |
-| [#25](https://github.com/vicci420/ezcontact-sales/pull/25) | 8 | tennis exit code fix (false errors) | 🔴 Merge con #19 |
-| [#27](https://github.com/vicci420/ezcontact-sales/pull/27) | 7 | morning-brief-v2.py | 🟡 Brief WhatsApp-friendly |
-| [#26](https://github.com/vicci420/ezcontact-sales/pull/26) | 8 | send-saludtotal-outreach.py | 🟡 Para próximo envío |
+| [#24](https://github.com/vicci420/ezcontact-sales/pull/24) | 13 | lead-finder site crawl (fix 0 leads bug) | 🔴 CRÍTICO — sin esto, 0 leads/noche |
+| [#19](https://github.com/vicci420/ezcontact-sales/pull/19) | 18 | tennis-reservation a master | 🔴 CRÍTICO — cron activo |
+| [#25](https://github.com/vicci420/ezcontact-sales/pull/25) | 13 | tennis exit code fix (false errors) | 🔴 Merge con #19 |
+| [#27](https://github.com/vicci420/ezcontact-sales/pull/27) | 12 | morning-brief-v2.py | 🟡 Brief WhatsApp-friendly |
+| [#26](https://github.com/vicci420/ezcontact-sales/pull/26) | 13 | send-saludtotal-outreach.py | 🟡 Para próximo envío |
 
-> ⚠️ Hay **24 PRs abiertos** — el más viejo tiene 42 días. Ver: github.com/vicci420/ezcontact-sales/pulls
+> ⚠️ Hay **24 PRs abiertos** — el más viejo tiene **47 días**. Ver: github.com/vicci420/ezcontact-sales/pulls
 
 ### 🩺 SaludTotal outreach — sin respuestas
 - 68 emails enviados 10 mar CDMX
-- **8 días transcurridos**
+- **13 días transcurridos**
 - Estado: Ya superó umbral típico B2B (7 días)
 - **Acción:** Considerar follow-up o cambio de estrategia
 
-### 🔴 VETME (contacto@vetme.mx) — **27 días esperando** (PERDIDO)
-- Respondieron 19 feb: "Con gusto podemos tener una llamada, ¿cuándo?"
-- **Lead PERDIDO por abandono**
-- **Acción:** Descartar de pipeline activo
+### 🔴 TODOS los prospectos con respuesta están PERDIDOS
+- **Chopo** (6 mar, 17d): Respuesta automática/genérica — piden "carta presentación como proveedor". No entendieron la propuesta.
+- **VETME** (19 feb, 32d): Pidieron llamada que nunca se dio
+- **Idiomas CUC** (25 feb, 26d): Elsa pidió que la llamaran
+- **TentenPie** (25 feb, 26d): Muy frío
+- **Rivalia Estudio** (25 feb, 26d): Muy frío
 
-### 🔴 Idiomas CUC — **21 días sin respuesta** (FRÍO)
-- Elsa pidió el 25 feb: "¿me puedes marcar?"
-- Tel de Elsa: **5551892059**
-- **Lead perdido — email ya no es suficiente**
-- **Acción:** Solo viable si Victor la marca directamente
+**Conclusión:** Pipeline de prospectos muerto. Necesitamos leads frescos → mergear PR #24.
 
-### 🟡 Otros drafts listos (todos ~20 días)
-- TentenPie, Rivalia Estudio, Chopo — necesitan decisión
+### 📱 Signups recientes — 22 mar (2 LATAM nuevos)
+**Hoy:**
+- 🇦🇷 Rocio cinelli (rocio) — magalirocio38@gmail.com
+- 🇨🇴 Eyleen (Enana) — eileensbgl@gmail.com
 
-### 📱 Signups recientes — 17 mar (3 MX, 2 LATAM)
-- 🇲🇽 Martinez (Petrolera) — mejor prospecto
-- 🇲🇽 Derli rios (Sam snikers)
-- 🇲🇽 amelia (Amelia shoes)
+**Anteriores:**
+- 🇲🇽 Yamilet Cañada Avila (Yam) — Hidalgo
+- 🇲🇽 Daniela (Sabine) — Puebla
+- 🇨🇴 5 signups LATAM más
 
 ### ⚠️ Crons con error
-- **outreach-9am** — ERROR (revisar)
-- **agua-estirar-7pm** — ERROR (revisar)
+- **outreach-9am** — ERROR (solo corre L-V, revisar mañana lunes)
 
 ---
 
-## 🌙 Trabajo nocturno completado (18 mar 2026 — 10pm CDMX del 17)
+## 🌙 Trabajo nocturno completado (23 mar 2026 — 10pm CDMX del 22)
 
-- ✅ Tennis: Miércoles 18 mar confirmado — Cancha 3, Folio 155714, Alejandro Navarro (VERIFICADO en TusApartados)
-- ✅ 7 respuestas de prospectos pendientes (SIN CAMBIOS — VETME 27d, CUC 21d)
-- ✅ 5 signups detectados (3 MX, 2 LATAM)
-- ⚠️ SaludTotal: 8 días desde envío (10 mar), 0 respuestas
-- ⚠️ Lead-finder NO ejecuta (PR #24 sin merge) — 0 leads nuevos
-- ⚠️ 24 PRs abiertos — situación crítica, bloquea automatización
-- ⚠️ 2 crons con error: outreach-9am, agua-estirar-7pm
-- ✅ Memoria escrita: `memory/2026-03-18.md`
+- ✅ Tennis lunes 23: CONFIRMADO — Cancha 1, Folio 156105, 7:00 AM, Mauricio
+- ✅ Tennis lunes 24: Cron ejecuta domingo 23 a las 5:59am CDMX
+- ✅ Compañero lunes 24: Mauricio Baeza Licón (7606), Cancha preferida: 1
+- ✅ 2 signups nuevos detectados (Argentina + Colombia)
+- ⚠️ Chopo = respuesta automática, no es interés real
+- ⚠️ SaludTotal: 13 días desde envío (10 mar), 0 respuestas
+- ⚠️ Lead-finder NO existe en master (PR #24 sin merge) — 0 leads nuevos
+- ⚠️ 24 PRs abiertos — PR más viejo: 47 días
+- ✅ Memoria escrita: `memory/2026-03-23.md`
 
-### 🔴 Prospectos con respuesta más antigua:
-- VETME: **27 días** esperando (PERDIDO)
-- Idiomas CUC: **21 días** esperando (PERDIDO)
-- TentenPie / Rivalia / Chopo: ~20 días
+### 🔴 Resumen prospectos:
+- **TODOS PERDIDOS:** VETME, CUC, TentenPie, Rivalia, Chopo
+- **Chopo:** Respuesta automática (no es interés real)
+- **Pipeline muerto** — urgente mergear PR #24 para generar leads frescos
