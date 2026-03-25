@@ -46,6 +46,8 @@ PARTNERS = {
 # One-time partner overrides: { "YYYY-MM-DD": (name, membership, id) }
 PARTNER_OVERRIDES = {
     "2026-03-09": ("Rafael Navarro Dávalos", "4425", None),  # Lunes 9 mar — override Mauricio
+    "2026-03-21": ("Tania Correa Oltra", "6692", None),      # Viernes 21 mar — override Ivan
+    # Yanel Osarithy Arenas Guerra = 7436 (para futuros overrides)
 }
 
 # One-time court override by date → preferred court moves to front
@@ -151,23 +153,25 @@ def verify_reservation(session, folio, fecha=None):
     This prevents false success reports (learned hard way 2026-02-18)
     
     Fixed 2026-02-23: Added date fallback in case folio regex captured wrong number.
-    Searches by folio first, then by fecha (YYYY-MM-DD) as fallback.
+    
+    FIXED 2026-03-25: REMOVED date fallback — it caused FALSE POSITIVES!
+    The date appears in GraficaApartadosCelular URL even when no reservation exists.
+    Now ONLY trust the folio match as confirmation.
     """
     try:
         resp = session.get(APARTADOS_URL)
         html = resp.text
         
-        # Primary: search by folio
+        # ONLY search by folio — date fallback removed (caused false positives)
         if folio and folio in html:
             print(f"✓ VERIFIED: Folio {folio} found in Tus Apartados")
             return True
         
-        # Fallback: search by date (YYYY-MM-DD format)
-        if fecha and fecha in html:
-            print(f"✓ VERIFIED (by date): {fecha} found in Tus Apartados (folio match failed)")
-            return True
+        # 2026-03-25: Date fallback REMOVED — was matching graph URL, not actual reservations
+        # The HTML always contains dates like "Fecha=2026-03-24&Fecha2=2026-03-25" in graph params
         
-        print(f"⚠ WARNING: Folio {folio} / fecha {fecha} NOT found in Tus Apartados")
+        print(f"⚠ WARNING: Folio {folio} NOT found in Tus Apartados")
+        print(f"  → This likely means the reservation FAILED silently")
         print(f"  → Check manually at TusApartadosCelular.php")
         return False
     except Exception as e:
