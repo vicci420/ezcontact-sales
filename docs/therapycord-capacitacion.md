@@ -8,12 +8,28 @@ Que el equipo de TherapyCord domine el uso de Salud Total para gestión de agend
 
 ---
 
-## MÓDULO 1: Salud Total — Agenda
+## MÓDULO 1: Salud Total — Acceso y Agenda
 
-### 1.1 Acceso al Sistema
-- **URL:** saludtotal.mx
-- **Usuario:** [asignado por administrador]
-- **Password:** [personal, no compartir]
+### 1.0 Acceso al Sistema
+
+**URL:** https://www.saludtotal.mx
+
+**Proceso de login:**
+1. Ir a www.saludtotal.mx
+2. Ingresar usuario (email) y contraseña
+3. Seleccionar consultorio "TherapyCord" si aparecen varias opciones
+
+### 1.1 Usuarios y Contraseñas
+
+| Terapeuta | Usuario (Email) | Contraseña |
+|-----------|-----------------|------------|
+| **Dr. Ivan** (Admin) | drivanmc@gmail.com | `123456789` |
+| **Lic. Kevin** | kevin@therapycord.com | `123456789` |
+| **Lic. Lilia** | lilia@therapycord.com | `123456789` |
+| **Lic. Montserrat** | monste@therapycord.com | `123456789` |
+| **Lic. Harold** | harold@therapycord.com | `123456789` |
+
+⚠️ **Importante:** Cada terapeuta debe usar SU propia cuenta para mantener trazabilidad.
 
 ### 1.2 Links Directos de Agenda por Terapeuta
 
