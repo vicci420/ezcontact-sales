@@ -27,11 +27,12 @@ Después de cualquier reservación de tennis:
 
 ---
 
-## 🚨 Pendientes urgentes — reportar a Vicci (29 mar 2026)
+## 🚨 Pendientes urgentes — reportar a Vicci (4 abr 2026)
 
-### 🏖️ Fin de semana — no hay tennis
-- Domingo 29 mar: No hay reservación (hoy)
-- **Próxima reservación:** Lunes 31 mar (cron 5:59am CDMX)
+### 🎾 Tennis
+- ✅ Viernes 3 abril: Folio 156908, Cancha 3, 7am — OK
+- Sábado/domingo: No hay tennis
+- Próximo: Lunes 7 abril (cron lo reservará domingo 6 abril 6am)
 
 ### 🔴 Signup MX prioritario — Hotel Westin
 - **Juan Gabriel** — wa.me/525573975683
@@ -41,48 +42,52 @@ Después de cualquier reservación de tennis:
 
 | PR | Días | Descripción | Urgencia |
 |----|------|-------------|----------|
-| [#28](https://github.com/vicci420/ezcontact-sales/pull/28) | 3 | tennis verify fix (false positives) | 🔴 Merge ASAP |
-| [#24](https://github.com/vicci420/ezcontact-sales/pull/24) | 18 | lead-finder site crawl (fix 0 leads bug) | 🔴 Sin esto = 0 leads/noche |
-| [#19](https://github.com/vicci420/ezcontact-sales/pull/19) | 23 | tennis-reservation a master | 🔴 Cron activo |
-| [#25](https://github.com/vicci420/ezcontact-sales/pull/25) | 18 | tennis exit code fix | 🔴 Merge con #19 |
-| [#27](https://github.com/vicci420/ezcontact-sales/pull/27) | 17 | morning-brief-v2.py | 🟡 Nice to have |
-| [#26](https://github.com/vicci420/ezcontact-sales/pull/26) | 18 | send-saludtotal-outreach.py | 🟡 Para próximo envío |
+| [#28](https://github.com/vicci420/ezcontact-sales/pull/28) | 7 | tennis verify fix (false positives) | 🔴 Merge ASAP |
+| [#24](https://github.com/vicci420/ezcontact-sales/pull/24) | 22 | lead-finder site crawl (fix 0 leads bug) | 🔴 Sin esto = 0 leads/noche |
+| [#19](https://github.com/vicci420/ezcontact-sales/pull/19) | 27 | tennis-reservation a master | 🔴 Cron activo |
+| [#25](https://github.com/vicci420/ezcontact-sales/pull/25) | 22 | tennis exit code fix | 🔴 Merge con #19 |
+| [#27](https://github.com/vicci420/ezcontact-sales/pull/27) | 21 | morning-brief-v2.py | 🟡 Nice to have |
+| [#26](https://github.com/vicci420/ezcontact-sales/pull/26) | 22 | send-saludtotal-outreach.py | 🟡 Para próximo envío |
 
-> ⚠️ Hay **25 PRs abiertos** — el más viejo tiene **52 días**. Ver: github.com/vicci420/ezcontact-sales/pulls
+> ⚠️ Hay **25 PRs abiertos** — el más viejo tiene **56 días**. Ver: github.com/vicci420/ezcontact-sales/pulls
 
 ### 🩺 SaludTotal outreach — sin respuestas
 - 68 emails enviados 10 mar CDMX
-- **18 días transcurridos** — campaña fallida
+- **21 días transcurridos** — campaña fallida
 - **Acción:** Considerar nueva estrategia o follow-up diferente
 
 ### 🔴 TODOS los prospectos con respuesta están PERDIDOS
-- **Chopo** (22d), **VETME** (37d), **Idiomas CUC** (31d), **TentenPie** (31d), **Rivalia** (31d)
+- **Chopo** (25d), **VETME** (40d), **Idiomas CUC** (34d), **TentenPie** (34d), **Rivalia** (34d)
 
 **Pipeline comercial muerto.** Urgente mergear PR #24 para generar leads frescos.
 
-### 📱 Signups recientes — 27 mar (6 nuevos)
-- 🇲🇽 **Alma Corral** (Fuller) — amircano018@gmail.com
-- 🇨🇱 Bella Millar (Camique) — +56986822986
-- 🇨🇴 Beatriz López — +573225427699
-- 🇻🇪 Victor Acosta (Anavic) — +584146050739
-- 🇨🇴 Samary (Inguenser) — +523105799874
-- 🇦🇷 Romeo (romefutstore_) — +541150222025
+### 📱 Signups recientes — 3-4 abr (7 en 2 días)
+- 🇦🇷 leon (leon) — +522901557040 ⭐ NUEVO
+- 🇦🇷 Eliana (Quiero empezar a promocionar) — +541130189929 ⭐ NUEVO
+- 🇨🇴 María Paula (Kira Bot) — +573150112845
+- 🇲🇽 **Maria** (Propio) — +529171277042 ⭐ NUEVO MX
+- 🇲🇽 **Graciela** (Novedades chely) — +5244431320243 ⭐ MX
+- 🇲🇽 **Manuel Enrique** (Produtos a domicilio) — +529961054780 ⭐ MX
+- 🇨🇴 Luisa Maria (Hortalizas) — +573171348734
 
-### ✅ Crons OK
-- Todos los crons reportan status `ok` al 28 mar
+### ✅ Crons
+- tennis/outreach marcan "error" pero es bug exit code (PR #25)
+- Demás crons OK
 
 ---
 
-## 🌙 Trabajo nocturno completado (29 mar 2026 — 10pm CDMX del 28)
+## 🌙 Trabajo nocturno completado (4 abr 2026 — 10pm CDMX del 3 abr)
 
 ### ✅ Trabajo completado:
-- 5 signups detectados (2 MX + 3 LATAM)
-- 7 respuestas prospectos verificadas (todos perdidos >20 días)
-- Emails revisados: sin urgentes
-- Memoria escrita: `memory/2026-03-29.md`
-- Seguimientos actualizados: `memory/seguimientos-activos.md`
-- Lead-finder: bloqueado (PR #24 pendiente merge)
+- 7 signups detectados (2 días) — 3 MX, 4 LATAM
+- 7 respuestas prospectos verificadas (todos perdidos >20 días, sin cambios)
+- Tennis viernes 3 abr verificado: Cancha 3 Folio 156908 ✅
+- Memoria escrita: `memory/2026-04-04.md`
+- Crons verificados: tennis OK, varios recordatorios con error (bug exit code)
+- Lead-finder: sigue bloqueado (PR #24 pendiente merge)
 
-### 📱 Signups MX para seguimiento:
-1. **Juan Gabriel — Hotel Westin** (28 mar) — wa.me/525573975683 ⭐
-2. Alma Corral — Fuller (27 mar) — wa.me/526181539933
+### 📱 Signups MX pendientes seguimiento:
+1. **Juan Gabriel — Hotel Westin** (28 mar) — wa.me/525573975683 ⭐ Prioritario B2B
+2. **Maria** (Propio) — wa.me/529171277042 🇲🇽 NUEVO
+3. **Graciela** (Novedades chely) — wa.me/5244431320243 🇲🇽
+4. **Manuel Enrique** (Produtos a domicilio) — wa.me/529961054780 🇲🇽
