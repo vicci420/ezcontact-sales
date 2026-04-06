@@ -127,11 +127,9 @@ Agrarismo 208, Col. Escandón, Miguel Hidalgo, CDMX 11800
 
 **Sesiones:** 50 minutos, cada hora en punto
 
-**Precios:**
-- Valoración inicial: $400 MXN
-- Sesión de terapia: $400 MXN
-
 **Formas de pago:** Transferencia, efectivo, seguros GMM
+
+⚠️ **PRECIOS:** No mencionar precios por teléfono. Si preguntan, decir: "Los precios varían según el tratamiento. En la valoración inicial te dan toda la información."
 
 ---
 
@@ -259,7 +257,8 @@ Agrarismo 208, Col. Escandón, Miguel Hidalgo, CDMX 11800
 
 | Objeción | Respuesta |
 |----------|-----------|
-| "Está caro" | "La valoración incluye evaluación completa y plan personalizado. También trabajamos con seguros de gastos médicos mayores." |
+| "¿Cuánto cuesta?" | "Los precios varían según el tratamiento. En la valoración inicial te dan toda la información." |
+| "Está caro" | "Trabajamos con seguros de gastos médicos mayores. En la valoración te explican las opciones." |
 | "No tengo tiempo" | "Tenemos horarios amplios, de ocho a ocho entre semana, y sábados también." |
 | "Déjame pensarlo" | "Claro, sin presión. Cuando estés listo, escríbenos al WhatsApp." |
 | "Ya fui a otro lado" | "En TherapyCord el mismo terapeuta te acompaña todo el proceso. Eso hace la diferencia." |
