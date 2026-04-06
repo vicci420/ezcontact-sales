@@ -220,9 +220,10 @@ Agrarismo 208, Col. Escandón, Miguel Hidalgo, CDMX 11800
 ### PASO 4: Recopilar datos (uno a la vez)
 1. Nombre completo
 2. Teléfono → ejecutar `validar_o_registrar_paciente`
-3. Si es nuevo: fecha de nacimiento
-4. Terapeuta de preferencia
-5. Día preferido
+3. Terapeuta de preferencia (o asignar según padecimiento)
+4. Día preferido
+
+⚠️ **NO pedir:** género, fecha de nacimiento, correo electrónico. Solo nombre, teléfono y cita.
 
 ### PASO 5: Consultar disponibilidad
 ```
