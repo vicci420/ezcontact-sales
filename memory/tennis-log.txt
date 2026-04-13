@@ -1,0 +1,82 @@
+Sat Feb 21 12:00:04 UTC 2026: Cron tennis - Mañana es fin de semana (domingo). No se hizo reservación.
+Sun Feb 22 12:05:00 UTC 2026: Cron tennis FAIL (parámetros incorrectos Hora/Horario). Reservación hecha manualmente por Katia: Lunes 23/02 07:00 Cancha 10 Folio 153958. Script corregido.
+Mon Feb 23 12:05:00 UTC 2026: Cron tennis OK — Martes 24/02 07:00 Cancha 3 Folio 153993. Bug corregido: regex folio ahora usa \d{5,} + fallback por fecha.
+Wed Feb 25 11:59:00 UTC 2026: Cron tennis OK — Jueves 26/02 07:00 Cancha 3 Folio 154226. (Confirmado por Katia en sesión).
+Thu Feb 26 11:59:00 UTC 2026: Cron tennis FAIL — Bug 'Hora:7' causó 'Unexpected response' en todos los courts. Reservación para Vie 27/02 NO se hizo. Todos los courts tomados a las 10pm CDMX. Script corregido: Hora '7' → '700' (fixed 2026-02-27 04:10 UTC).
+Tue Mar 03 11:59:00 UTC 2026: Cron tennis OK — 2026-03-04 07:00 Cancha 3 Folio 154678. Verificado manualmente en TusApartados ✅
+Wed Mar 04 12:00:02 UTC 2026: Cron tennis OK — 2026-03-05 07:00 Cancha 3 Folio 154756. Verificado en TusApartados ✅ (folio corregido post-ejecución)
+Thu Mar 05 12:00:04 UTC 2026: Cron tennis OK — 2026-03-06 07:00 Cancha 3 Folio 154857. Verificado en TusApartados ✅
+Fri Mar 06 11:59:25 UTC 2026: Cron tennis SKIP — weekend
+Fri Mar  6 11:59:34 UTC 2026: Cron tennis SKIP — mañana es sábado. No se hizo reservación. Script restaurado desde git (estaba faltante en disco).
+Sat Mar 07 11:59:02 UTC 2026: Cron tennis SKIP — weekend
+Sat Mar 07 21:05:39 UTC 2026: Cron tennis SKIP — weekend
+Sat Mar 07 23:35:42 UTC 2026: Cron tennis SKIP — weekend
+Sun Mar 08 00:06:14 UTC 2026: Cron tennis SKIP — weekend
+Sun Mar 08 12:00:03 UTC 2026: Cron tennis OK — 2026-03-09 07:00 Cancha 3 Folio 155077
+Mon Mar 09 12:00:02 UTC 2026: Cron tennis OK — 2026-03-10 07:00 Cancha 3 Folio 155148
+Mon Mar  9 12:00:02 UTC 2026: NOTE — Cron marcó 'error' en OpenClaw pero reservación sí se hizo. Folio 155148 confirmado en TusApartados. Posible bug en exit code del script.
+Tue Mar 10 12:00:02 UTC 2026: Cron tennis OK — 2026-03-11 07:00 Cancha 2 Folio 155232
+Wed Mar 11 12:00:02 UTC 2026: Cron tennis OK — 2026-03-12 07:00 Cancha 8 Folio 155325
+Wed Mar 11 12:10:10 UTC 2026: Cron tennis OK — 2026-03-12 07:00 Cancha 8 Folio 155325. Compañero: Rafael Quezada (7597). Verificado en TusApartados ✅ (cron marcó 'error' por bug exit code — PR #25 pendiente)
+Thu Mar 12 04:00:30 UTC 2026: Cron tennis FAIL — no_courts_available
+Thu Mar 12 12:00:02 UTC 2026: Cron tennis OK — 2026-03-13 07:00 Cancha 4 Folio 155434
+Fri Mar 13 04:00:18 UTC 2026: Cron tennis FAIL — no_courts_available
+Fri Mar 13 11:59:05 UTC 2026: Cron tennis SKIP — weekend
+Sat Mar 14 11:59:06 UTC 2026: Cron tennis SKIP — weekend
+Sun Mar 15 12:00:03 UTC 2026: Cron tennis OK — 2026-03-16 07:00 Cancha 1 Folio 155635
+Mon Mar 16 12:00:11 UTC 2026: Cron tennis OK — 2026-03-17 07:00 Cancha 2 Folio 155654
+Tue Mar 17 04:01:34 UTC 2026: Cron tennis FAIL — no_courts_available
+Mon Mar 16 22:01:00 UTC 2026: VERIFICADO — Martes 2026-03-17 07:00 Cancha 2 Folio 155670. Carlos Alberto Sánchez (7621). Confirmado en TusApartados ✅
+Tue Mar 17 12:00:02 UTC 2026: Cron tennis OK — 2026-03-18 07:00 Cancha 3 Folio 155714
+Wed Mar 18 04:00:43 UTC 2026: Cron tennis FAIL — no_courts_available
+Wed Mar 18 12:00:01 UTC 2026: Cron tennis OK — 2026-03-19 07:00 Cancha 8 Folio 155811
+Thu Mar 19 12:00:03 UTC 2026: Cron tennis OK — 2026-03-20 07:00 Cancha 4 Folio 155905
+Thu Mar 19 12:00:36 UTC 2026: Cron tennis OK — 2026-03-20 07:00 Cancha 4 Folio 155905. Compañero: Ivan Velazquez Fiesco (6970). Verificado en TusApartados ✅ (cron marcó 'error' por bug exit code — PR #25 pendiente)
+Fri Mar 20 04:00:22 UTC 2026: Cron tennis FAIL — no_courts_available
+Fri Mar 20 11:59:04 UTC 2026: Cron tennis SKIP — weekend
+Sat Mar 21 11:59:04 UTC 2026: Cron tennis SKIP — weekend
+Sun Mar 22 04:00:43 UTC 2026: Cron tennis SKIP — weekend
+Sun Mar 22 12:00:01 UTC 2026: Cron tennis OK — 2026-03-23 07:00 Cancha 1 Folio 156105
+Sun Mar 22 12:00:23 UTC 2026: Cron tennis FAIL — no_courts_available
+Sun Mar 22 12:00:30 UTC 2026: VERIFICADO — Lunes 2026-03-23 07:00 Cancha 1 Folio 156105. Mauricio Baeza Licón (7606). Confirmado en TusApartados ✅
+Mon Mar 23 12:00:03 UTC 2026: Cron tennis OK — 2026-03-24 07:00 Cancha 2 Folio 156160
+Mon Mar 23 12:00:45 UTC 2026: Cron tennis FAIL — no_courts_available
+Tue Mar 24 12:00:04 UTC 2026: Cron tennis OK — 2026-03-25 07:00 Cancha 3 Folio 156229
+Wed Mar 25 04:00:38 UTC 2026: Cron tennis FAIL — no_courts_available
+Wed Mar 25 12:00:01 UTC 2026: Cron tennis OK — 2026-03-26 07:00 Cancha 8 Folio 156312
+Thu Mar 26 12:00:03 UTC 2026: Cron tennis OK — 2026-03-27 07:00 Cancha 3 Folio 156407
+Thu Mar 26 12:00:30 UTC 2026: Cron tennis OK — 2026-03-27 07:00 Cancha 3 Folio 156407. Compañero: Yanel Osarithy Arenas Guerra (7436). Verificado en TusApartados ✅ (cron marcó 'error' por bug exit code — PR #25 pendiente)
+Fri Mar 27 11:59:04 UTC 2026: Cron tennis SKIP — weekend
+Sat Mar 28 11:59:04 UTC 2026: Cron tennis SKIP — weekend
+Sun Mar 29 12:00:03 UTC 2026: Cron tennis OK — 2026-03-30 07:00 Cancha 3 Folio 156596
+Sun Mar 29 12:00:30 UTC 2026: VERIFICADO — Lunes 2026-03-30 07:00 Cancha 3 Folio 156596. Compañero pendiente. Confirmado en TusApartados ✅
+Mon Mar 30 12:00:04 UTC 2026: Cron tennis OK — 2026-03-31 07:00 Cancha 3 Folio 156645
+Mon Mar 30 12:00:29 UTC 2026: Cron tennis OK — 2026-03-31 07:00 Cancha 3 Folio 156645. Compañero: Carlos Alberto Sánchez (7621). Verificado en TusApartados ✅ (cron marcó 'error' por bug exit code — PR #25 pendiente)
+Tue Mar 31 04:00:46 UTC 2026: Cron tennis OK — 2026-03-31 07:00 Cancha 4 Folio 156722
+Tue Mar 31 04:01:17 UTC 2026: Cron tennis FAIL — no_courts_available
+Tue Mar 31 12:00:02 UTC 2026: Cron tennis OK — 2026-04-01 07:00 Cancha 3 Folio 156723
+Tue Mar 31 22:00:30 CST 2026: VERIFICADO — Miércoles 2026-04-01 07:00 Cancha 3 Folio 156723. Compañero: Alejandro Navarro Bernardo (6525). Confirmado en TusApartados ✅
+Wed Apr 01 12:00:02 UTC 2026: Cron tennis OK — 2026-04-02 07:00 Cancha 3 Folio 156810
+Fri Apr 03 12:01:03 UTC 2026: Cron tennis SKIP — weekend
+Fri Apr 03 12:00:00 UTC 2026: ⚠️ MANUAL NOTE — Cron jueves 2 abr no corrió/logueó. Sin reservación para viernes 3 abr. Canchas llenas.
+Sun Apr 05 19:33:41 UTC 2026: Cron tennis FAIL — no_courts_available
+Sun Apr 05 19:35:26 UTC 2026: Cron tennis FAIL — no_courts_available
+Sun Apr 05 12:00:00 UTC 2026: Cron tennis OK — 2026-04-06 07:00 Cancha 8 Folio 157062. Compañero: Mauricio Baeza Licón (7606). VERIFICADO en TusApartados ✅ (entry added during heartbeat check)
+Sun Apr 05 23:47:09 UTC 2026: Cron tennis FAIL — no_courts_available
+Mon Apr 06 12:00:00 UTC 2026: Cron tennis OK — 2026-04-07 07:00 Folio 157123. VERIFICADO en TusApartados ✅ (cron marcó 'error' por bug exit code — PR #25 pendiente)
+Tue Apr 07 12:00:47 UTC 2026: Cron tennis FAIL — no_courts_available
+Tue Apr 07 12:06:00 UTC 2026: VERIFICADO — Martes 2026-04-07 07:00 Cancha 8 Folio 157170. Miércoles 8 abril: SIN CANCHA (todas ocupadas a las 6am).
+Wed Apr 08 03:32:46 UTC 2026: Cron tennis FAIL — no_courts_available
+Wed Apr 08 12:00:46 UTC 2026: Cron tennis OK — 2026-04-09 07:00 Cancha 8 Folio 157261
+Wed Apr 08 12:13:31 UTC 2026: Cron tennis FAIL — no_courts_available
+Wed Apr 08 12:13:00 UTC 2026: VERIFICADO — Hoy miércoles 2026-04-08 07:00 Cancha 10 Folio 157206 (apareció en TusApartados aunque cron marcó fail). Jueves 2026-04-09 07:00 Cancha 8 Folio 157261 — Rafael Quezada Garcia (7597). Ambos confirmados ✅
+Thu Apr 09 12:00:00 UTC 2026: VERIFICADO — Jueves 2026-04-09 07:00 Cancha 8 Folio 157350. Viernes 2026-04-10 07:00 Cancha 2 Folio 157370 — Yanel Osarithy Arenas Guerra (7436). Ambos confirmados en TusApartados ✅
+Thu Apr 09 19:55:41 UTC 2026: Cron tennis FAIL — no_courts_available
+Thu Apr 09 20:55:33 UTC 2026: Cron tennis FAIL — no_courts_available
+Thu Apr 09 22:25:39 UTC 2026: Cron tennis FAIL — no_courts_available
+Thu Apr 09 22:26:00 UTC 2026: HEARTBEAT CHECK — Jueves 2026-04-09 07:00 Cancha 8 Folio 157350 ✅ | Viernes 2026-04-10 07:00 Cancha 2 Folio 157370 — Yanel (7436) ✅ Ambos verificados en TusApartados
+Fri Apr 10 00:25:50 UTC 2026: Cron tennis FAIL — no_courts_available
+Fri Apr 10 12:35:03 UTC 2026: Cron tennis SKIP — weekend
+Fri Apr 10 15:33:55 UTC 2026: Cron tennis SKIP — weekend
+Mon Apr 13 04:03:01 UTC 2026: Cron tennis FAIL — no_courts_available
+Sun Apr 12 22:03:18 CDMX 2026: VERIFICADO — Lunes 2026-04-13 07:00 Cancha 6 Folio 157609 ✅ (encontrado en TusApartados durante trabajo nocturno)

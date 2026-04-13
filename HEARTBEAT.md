@@ -27,67 +27,63 @@ Después de cualquier reservación de tennis:
 
 ---
 
-## 🚨 Pendientes urgentes — reportar a Vicci (4 abr 2026)
+## 🚨 Pendientes urgentes — reportar a Vicci (13 abr 2026)
 
 ### 🎾 Tennis
-- ✅ Viernes 3 abril: Folio 156908, Cancha 3, 7am — OK
-- Sábado/domingo: No hay tennis
-- Próximo: Lunes 7 abril (cron lo reservará domingo 6 abril 6am)
+**⚠️ Cada fin de semana:** Preguntarle a Vicci con quién juega la próxima semana y actualizar TOOLS.md
 
-### 🔴 Signup MX prioritario — Hotel Westin
-- **Juan Gabriel** — wa.me/525573975683
-- Signup 28 mar — lead B2B potencialmente alto valor
+**Semana 14-18 abril:**
+- Lunes: Mauricio Baeza (7606) ✅ ya reservado
+- Martes: Alejandro Navarro (6525)
+- Miércoles: Yanel (7436)
+- Jueves: Bruno Palomino (7600)
+- Viernes: Carlos Toledo (7238)
 
-### 🔴 PRs para mergear — 25 ABIERTOS
+### 🔴 PRs para mergear — 25 ABIERTOS (68 días el más viejo)
 
 | PR | Días | Descripción | Urgencia |
 |----|------|-------------|----------|
-| [#28](https://github.com/vicci420/ezcontact-sales/pull/28) | 7 | tennis verify fix (false positives) | 🔴 Merge ASAP |
-| [#24](https://github.com/vicci420/ezcontact-sales/pull/24) | 22 | lead-finder site crawl (fix 0 leads bug) | 🔴 Sin esto = 0 leads/noche |
-| [#19](https://github.com/vicci420/ezcontact-sales/pull/19) | 27 | tennis-reservation a master | 🔴 Cron activo |
-| [#25](https://github.com/vicci420/ezcontact-sales/pull/25) | 22 | tennis exit code fix | 🔴 Merge con #19 |
-| [#27](https://github.com/vicci420/ezcontact-sales/pull/27) | 21 | morning-brief-v2.py | 🟡 Nice to have |
-| [#26](https://github.com/vicci420/ezcontact-sales/pull/26) | 22 | send-saludtotal-outreach.py | 🟡 Para próximo envío |
+| [#24](https://github.com/vicci420/ezcontact-sales/pull/24) | 34 | lead-finder site crawl (fix 0 leads bug) | 🔴 Sin esto = 0 leads/noche |
+| [#28](https://github.com/vicci420/ezcontact-sales/pull/28) | 19 | tennis verify fix (false positives) | 🟡 Estabilidad |
+| [#25](https://github.com/vicci420/ezcontact-sales/pull/25) | 34 | tennis exit code fix | 🟡 Crons marcan "error" |
+| [#19](https://github.com/vicci420/ezcontact-sales/pull/19) | 39 | tennis-reservation a master | 🟡 Script estable |
 
-> ⚠️ Hay **25 PRs abiertos** — el más viejo tiene **56 días**. Ver: github.com/vicci420/ezcontact-sales/pulls
+> ⚠️ **25 PRs abiertos** — el más viejo tiene **68 días**. Ver: github.com/vicci420/ezcontact-sales/pulls
 
-### 🩺 SaludTotal outreach — sin respuestas
+### 🩺 SaludTotal outreach — campaña fallida
 - 68 emails enviados 10 mar CDMX
-- **21 días transcurridos** — campaña fallida
-- **Acción:** Considerar nueva estrategia o follow-up diferente
+- **34 días transcurridos** — 0 respuestas
+- **Acción:** Nueva estrategia necesaria
 
-### 🔴 TODOS los prospectos con respuesta están PERDIDOS
-- **Chopo** (25d), **VETME** (40d), **Idiomas CUC** (34d), **TentenPie** (34d), **Rivalia** (34d)
+### 🔴 Pipeline comercial MUERTO
+Prospectos con respuesta perdidos (>20 días sin seguimiento):
+- Chopo, VETME, Idiomas CUC, TentenPie, Rivalia
 
-**Pipeline comercial muerto.** Urgente mergear PR #24 para generar leads frescos.
+**Sin leads frescos hasta merge de PR #24.**
 
-### 📱 Signups recientes — 3-4 abr (7 en 2 días)
-- 🇦🇷 leon (leon) — +522901557040 ⭐ NUEVO
-- 🇦🇷 Eliana (Quiero empezar a promocionar) — +541130189929 ⭐ NUEVO
-- 🇨🇴 María Paula (Kira Bot) — +573150112845
-- 🇲🇽 **Maria** (Propio) — +529171277042 ⭐ NUEVO MX
-- 🇲🇽 **Graciela** (Novedades chely) — +5244431320243 ⭐ MX
-- 🇲🇽 **Manuel Enrique** (Produtos a domicilio) — +529961054780 ⭐ MX
-- 🇨🇴 Luisa Maria (Hortalizas) — +573171348734
+### 📱 Signups MX recientes (6-7 abril)
+- 🇲🇽 **Gabriela** (Gabriela) — wa.me/526143453699 ⭐ NUEVO
+- 🇲🇽 **Pablo** (Fresa) — wa.me/527271005206 ⭐ NUEVO
 
 ### ✅ Crons
-- tennis/outreach marcan "error" pero es bug exit code (PR #25)
-- Demás crons OK
+- tennis/morning-brief marcan "error" pero funcionan (bug exit code PR #25)
+- babypool-notify, meditacion-9pm, trabajo-nocturno: OK
 
 ---
 
-## 🌙 Trabajo nocturno completado (4 abr 2026 — 10pm CDMX del 3 abr)
+## 🌙 Trabajo nocturno completado (13 abr 2026 — 10pm CDMX del 12 abr)
 
 ### ✅ Trabajo completado:
-- 7 signups detectados (2 días) — 3 MX, 4 LATAM
-- 7 respuestas prospectos verificadas (todos perdidos >20 días, sin cambios)
-- Tennis viernes 3 abr verificado: Cancha 3 Folio 156908 ✅
-- Memoria escrita: `memory/2026-04-04.md`
-- Crons verificados: tennis OK, varios recordatorios con error (bug exit code)
-- Lead-finder: sigue bloqueado (PR #24 pendiente merge)
+- 1 signup nuevo detectado (Lautaro, Argentina)
+- 7 respuestas prospectos verificadas (todos perdidos >30 días, sin cambios)
+- Memoria escrita: `memory/2026-04-13.md`
+- Lead-finder: sigue bloqueado (PR #24 pendiente merge — **34 días**)
+- 25 PRs abiertos (**68 días el más viejo**)
 
 ### 📱 Signups MX pendientes seguimiento:
-1. **Juan Gabriel — Hotel Westin** (28 mar) — wa.me/525573975683 ⭐ Prioritario B2B
-2. **Maria** (Propio) — wa.me/529171277042 🇲🇽 NUEVO
-3. **Graciela** (Novedades chely) — wa.me/5244431320243 🇲🇽
-4. **Manuel Enrique** (Produtos a domicilio) — wa.me/529961054780 🇲🇽
+1. **Karla** (Bazar karly) — wa.me/527821975137 🇲🇽 11 abr
+2. **auttec** (auttec) — wa.me/527721616547 🇲🇽 10 abr
+3. **Jose Lopez** (Viajes Carrillo) — wa.me/526633242086 🇲🇽 10 abr
+
+### 📱 Signup LATAM nuevo:
+- 🇦🇷 **Lautaro** (mágico) — wa.me/5491122872837 12 abr
