@@ -1,42 +1,26 @@
-# EZContact Sales - Proyecto Comercial
+# Consultorio 751 — Hospital Ángeles México
+## EZContact + SaludTotal | WhatsApp Assistant v1.0
 
-*Creado: 2026-02-03*
-*Objetivo: Consolidar pipeline, métricas y estructura comercial*
+### Prompts
 
-## Meta Principal
-Generar revenue para Lozano Tech a través de EZContact.
+| Archivo | Versión | Descripción |
+|---------|---------|-------------|
+| [`prompts/consultorio751-whatsapp-v1.md`](prompts/consultorio751-whatsapp-v1.md) | v1.0 | Prompt WhatsApp general — 5 doctores |
 
-## Situación Actual
-- EZContact aporta ~$60K MXN/mes
-- Meta: 27 clientes nuevos de 100 prospectos
+### Docs
 
-## Herramientas
-- **Metabase** — Métricas y dashboards
-- **ClickUp** — Pipeline y gestión de tareas
-- **Google Sheets** — Históricos de clientes
+| Archivo | Descripción |
+|---------|-------------|
+| [`docs/doctores.md`](docs/doctores.md) | 5 doctores: especialidad, email, WA, cédulas |
+| [`docs/levantamiento.md`](docs/levantamiento.md) | Cuestionario de 9 preguntas por doctor |
+| [`docs/foto-perfil-whatsapp.jpg`](docs/foto-perfil-whatsapp.jpg) | Imagen "El Vitruvio Semiológico" |
 
-## Documentos de Referencia
-- Paquetes Clientes: https://docs.google.com/spreadsheets/d/1Vlcj7GEBBY1v4FDKIjkNTcR8ga1VBM1T
-- Ingresos y Gastos TL: https://docs.google.com/spreadsheets/d/1-EFh5bAVpdPfxfF1MfRxueod1gBFTlb851IqNw6zQwo
+### Doctores
 
-## Equipo Comercial
-- **Victor Arredondo** — Revenue / Director
-- **Jennifer Nevares** — Closer (Monterrey)
-- **Dulce Alejandra Arriola** — SDR LinkedIn
+1. Dr. Iván Velázquez Fiesco — Medicina Crítica / UCI
+2. Dr. José Andrei Coria Hernández — Cirugía General / Bariátrica  
+3. Dr. Hiehard Douglas Rendón Jiménez — Medicina Interna / Crítica / ECMO
+4. Dr. Carlos Alberto Toledo Triana — Geriatría
+5. Dr. Juan Daniel Díaz García — Nefrología / Medicina Interna
 
-## Top Clientes (por volumen conversaciones)
-| Cliente | Ene 2025 | Feb 2025 | Mar 2025 | Abr 2025 |
-|---------|----------|----------|----------|----------|
-| Alfa Talent | 1,154 | 3,124 | 1,914 | 2,064 |
-| MM Trámites | 1,384 | 2,183 | 2,048 | - |
-| Legacy D1 | - | 23 | 1,189 | - |
-| Truck's Motion | 255 | 235 | 724 | - |
-| La Mexicana | 184 | 300 | 230 | - |
-| SaludTotal | 91 | 416 | 132 | - |
-
-## Pendientes
-- [x] Acceso a Metabase ✓ https://metabase.lozano.tech/dashboard/1?tab=11-ezcontact
-- [x] Acceso a ClickUp ✓ https://app.clickup.com
-- [ ] Mapear pipeline actual
-- [ ] Definir métricas clave
-- [ ] Estructura de seguimiento consolidado
+**Ubicación:** Agrarismo 208, Torre B, 7° Piso, Cons. 751, Col. Escandón, Miguel Hidalgo, CDMX 11800

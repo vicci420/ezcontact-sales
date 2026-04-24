@@ -1,0 +1,79 @@
+# Consultorio 751 — Hospital Ángeles México
+*Proyecto: SaludTotal + EZContact para 4 médicos*
+*Creado: 2026-04-23*
+
+**Ubicación:** Agrarismo 208, Torre B, 7° Piso, Cons. 751, Col. Escandón, Miguel Hidalgo, CDMX 11800
+**Tel consultorio compartido:** 55-6304-9089
+
+---
+
+## 4 Doctores
+
+### Dr. Iván Velázquez Fiesco
+- **Especialidad:** Medicina Crítica y Terapia Intensiva (Jefe UCI, Hospital Ángeles México)
+- **Email:** drivanmc@gmail.com
+- **WA:** +5215517988529
+- **Base TherapyCord:** ✅ Prompts voz v7 + WhatsApp v2 disponibles
+- **Nota:** Médico de planta UCI — asistente distinto (familiares, referencias de colegas)
+
+### Dr. José Andrei Coria Hernández
+- **Especialidad:** Cirugía General, Mínima Invasión y Cirugía Bariátrica
+- **Email:** andreicoria@gmail.com
+- **Tel:** 55-6304-9089 (consultorio) | Cel: 55-4577-0939
+- **WA:** pendiente confirmar (probablemente 55-4577-0939)
+- **Seguros:** GNP, AXA, Bupa, Allianz, Mapfre, Metlife, Banorte
+- **Consulta:** $1,200 primera / $1,000 seguimiento
+- **Doctoralia:** https://www.doctoralia.com.mx/jose-andrei-coria-hernandez/cirujano-general/miguel-hidalgo
+
+### Dr. Hiehard Douglas Rendón Jiménez
+- **Especialidad:** Medicina Interna + Medicina Crítica y Terapia Intensiva + Especialista ECMO
+- **Email:** hiehard@hotmail.com
+- **WA:** +5215513208228
+- **Twitter:** @hiehard | Facebook: hrendonMD
+- **Consulta:** $1,200 primera / $1,000 seguimiento / Teleconsulta: $1,000
+- **Solo privados** — NO acepta aseguradoras
+- **Doctoralia:** https://www.doctoralia.com.mx/hiehard-rendon-jimenez/internista-especialista-en-medicina-critica-y-terapia-intensiva/miguel-hidalgo
+
+### Dr. Carlos Alberto Toledo Triana
+- **Especialidad:** Geriatría
+- **Email:** drcarlostoledotr@gmail.com
+- **WA personal:** +5215517987411
+- **También en:** Hospital Star Médica Centro (San Luis Potosí 143, Cuauhtémoc)
+- **Perfil:** https://hospitalangeles.com/medico/carlos-alberto-toledo-triana
+
+### Dr. Juan Daniel Díaz García
+- **Especialidad:** Nefrología / Medicina Interna
+- **Email:** drdanieldiaz.nefrologia@gmail.com (encontrado online)
+- **WA personal:** +5215534133330
+- **Tel consultorio:** 55-5516-9900 Ext. 1259
+- **Instagram:** @dr.danieldiaznefrologo
+- **Perfil:** https://hospitalangeles.com/medico/juan-daniel-diaz-garcia
+
+---
+
+## Foto de perfil asistentes
+`projects/consultorio751-foto-perfil.jpg` — "El Vitruvio Semiológico"
+
+---
+
+## Estado implementación
+
+| Doctor | SaludTotal | EZContact (WA) | Prompt | Levantamiento |
+|--------|-----------|----------------|--------|---------------|
+| Iván Velázquez | ⬜ | ⬜ | ✅ (adaptar TherapyCord) | ⬜ |
+| Andrei Coria | ⬜ | ⬜ | ⬜ | ⬜ |
+| Hiehard Rendón | ⬜ | ⬜ | ⬜ | ⬜ |
+| Carlos Toledo | ⬜ | ⬜ | ⬜ | ⬜ |
+| Daniel Díaz | ⬜ | ⬜ | ⬜ | ⬜ |
+
+---
+
+## Cuestionario de levantamiento (por doctor)
+Ver: `projects/consultorio751-levantamiento.md`
+
+## Pendientes
+- [ ] Email y especialidad Dr. Daniel Díaz
+- [ ] Números Twilio/EZContact (cuando Joel/Eduardo asignen)
+- [ ] Aplicar cuestionario de levantamiento a cada doctor
+- [ ] Arrancar prompts EZContact por doctor
+- [ ] Crear cuentas SaludTotal (Vicci lo hace manualmente)
