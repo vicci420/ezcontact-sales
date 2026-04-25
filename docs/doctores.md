@@ -30,12 +30,21 @@
 - **Email:** hiehard@hotmail.com
 - **WA:** +5215513208228
 - **Twitter:** @hiehard | Facebook: hrendonMD
-- **Consulta:** $1,200 primera / $1,000 seguimiento / Teleconsulta: $1,000
+- **Fecha de nacimiento:** 29/05/1979
+- **Cédulas:** Medicina General 4132926 | Medicina Interna 6119155 | Terapia Intensiva 7130461
+- **Agenda consultorio 751:** Lunes, martes, jueves y viernes · 11:00–13:00 hrs
+- **Duración:** Primera vez 60 min / Seguimiento 45 min
+- **Honorarios:** $1,500 primera / $1,200 seguimiento / $1,000 teleconsulta
 - **Solo privados** — NO acepta aseguradoras
+- **Idioma:** Español + English ✅
+- **Urgencias:** Número personal solo en caso absolutamente necesario (no compartir por defecto)
+- **Nombre asistente:** "el asistente del Dr. Rendón" (pendiente confirmar)
 - **Doctoralia:** https://www.doctoralia.com.mx/hiehard-rendon-jimenez/internista-especialista-en-medicina-critica-y-terapia-intensiva/miguel-hidalgo
+- **Levantamiento:** ✅ Completo (22-abr-2026)
 
 ### Dr. Carlos Alberto Toledo Triana
-- **Especialidad:** Geriatría
+- **Especialidades:** Medicina Interna · Geriatría · Somnología (Medicina del Sueño)
+- **Media:** Aparece en MVS Noticias con Luis Cárdenas — experto en Trastornos del Sueño
 - **Email:** drcarlostoledotr@gmail.com
 - **WA personal:** +5215517987411
 - **También en:** Hospital Star Médica Centro (San Luis Potosí 143, Cuauhtémoc)
@@ -51,6 +60,11 @@
 
 ---
 
+## Secretaria compartida
+**Haidée** — gestiona calendario de citas en SaludTotal para los 5 doctores
+- El agente virtual también puede agendar directamente (no depender solo de Haidée)
+- Coordinación: agente virtual primera línea → Haidée como respaldo
+
 ## Foto de perfil asistentes
 `projects/consultorio751-foto-perfil.jpg` — "El Vitruvio Semiológico"
 
@@ -62,7 +76,7 @@
 |--------|-----------|----------------|--------|---------------|
 | Iván Velázquez | ⬜ | ⬜ | ✅ (adaptar TherapyCord) | ⬜ |
 | Andrei Coria | ⬜ | ⬜ | ⬜ | ⬜ |
-| Hiehard Rendón | ⬜ | ⬜ | ⬜ | ⬜ |
+| Hiehard Rendón | ⬜ | ⬜ | ✅ | ✅ |
 | Carlos Toledo | ⬜ | ⬜ | ⬜ | ⬜ |
 | Daniel Díaz | ⬜ | ⬜ | ⬜ | ⬜ |
 
