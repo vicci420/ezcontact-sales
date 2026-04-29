@@ -27,7 +27,7 @@ Después de cualquier reservación de tennis:
 
 ---
 
-## 🚨 Pendientes urgentes — reportar a Vicci (13 abr 2026)
+## 🚨 Pendientes urgentes — reportar a Vicci (29 abr 2026)
 
 ### 🎾 Tennis
 **⚠️ Cada fin de semana:** Preguntarle a Vicci con quién juega la próxima semana y actualizar TOOLS.md
