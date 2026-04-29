@@ -36,31 +36,34 @@ PASSWORD = "junior"
 
 # Weekly partners (membership numbers and internal IDs)
 PARTNERS = {
-    0: ("Mauricio Baeza Licón", "7606", None),      # Monday
-    1: ("Carlos Alberto Sánchez", "7621", None),     # Tuesday
-    2: ("Alejandro Navarro Bernardo", "6525", None), # Wednesday
-    3: ("Rafael Quezada Garcia", "7597", "10332"),   # Thursday - ID confirmed
-    4: ("Ivan Velazquez Fiesco", "6970", None),      # Friday
+    0: ("Mauricio Baeza Licón", "7606", None),           # Monday
+    1: ("Alejandro Navarro Bernardo", "6525", None),     # Tuesday
+    2: ("Sophia", "7427", None),                         # Wednesday (actualizado 21 abr 2026)
+    3: ("Bruno Jarhani Palomino Ramírez", "7600", None), # Thursday
+    4: ("Carlos Alberto Toledo Triana", "7238", None),   # Friday
 }
 
 # One-time partner overrides: { "YYYY-MM-DD": (name, membership, id) }
 PARTNER_OVERRIDES = {
     "2026-03-09": ("Rafael Navarro Dávalos", "4425", None),  # Lunes 9 mar — override Mauricio
+    "2026-04-30": ("Bruno Jarhani Palomino Ramírez", "7600", None),  # Miércoles 30 abr — override Sophia (instrucción Vicci 27 abr)
+    "2026-05-01": ("Rafael Quezada García", "7597", None),  # Jueves 1 may — override Bruno (instrucción Vicci 27 abr)
 }
 
 # One-time court override by date → preferred court moves to front
 COURT_OVERRIDES = {
     "2026-03-11": 2,  # Miércoles 11 mar — cancha 2 en lugar de 3
+    "2026-05-01": 1,  # Jueves 1 may — cancha 1 (instrucción Vicci 28 abr)
 }
 
 # Court priority per weekday (0=Mon, 1=Tue, 2=Wed, 3=Thu, 4=Fri)
-# Preferred court first, then fallbacks
+# Prioridad: 3 → 1 → 6 — actualizado 22 abr 2026 (instrucción Vicci)
 COURT_PRIORITY_BY_DAY = {
-    0: [1, 2, 3, 8, 6, 10, 4, 5, 7, 9],   # Lunes   → cancha 1
-    1: [2, 3, 8, 6, 10, 4, 5, 7, 9, 1],   # Martes  → cancha 2
-    2: [3, 2, 8, 6, 10, 4, 5, 7, 9, 1],   # Miércoles → cancha 3
-    3: [8, 3, 2, 6, 10, 4, 5, 7, 9, 1],   # Jueves  → cancha 8
-    4: [4, 3, 2, 8, 6, 10, 5, 7, 9, 1],   # Viernes → cancha 4
+    0: [3, 1, 6, 2, 8, 10, 4, 5, 7, 9],   # Lunes
+    1: [3, 1, 6, 2, 8, 10, 4, 5, 7, 9],   # Martes
+    2: [3, 1, 6, 2, 8, 10, 4, 5, 7, 9],   # Miércoles
+    3: [3, 1, 6, 2, 8, 10, 4, 5, 7, 9],   # Jueves
+    4: [3, 1, 6, 2, 8, 10, 4, 5, 7, 9],   # Viernes
 }
 
 # Verification URL

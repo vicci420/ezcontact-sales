@@ -1,6 +1,6 @@
 # Seguimientos Activos
 
-Última actualización: 29 marzo 2026
+Última actualización: 30 marzo 2026
 
 ---
 
@@ -94,15 +94,27 @@
 
 ---
 
+## 📱 EZCONTACT - Signups LATAM (29-30 mar)
+
+### 🇦🇷 Juana Benítez — Chiquis
+- **Email:** 3764361443abenitez@gmail.com
+- **WhatsApp:** +543764361443
+- **Fecha registro:** 29 mar 2026
+- **Status:** Nuevo signup
+- **Seguimiento:** https://wa.me/543764361443?text=Hola%20Juana%20%F0%9F%91%8B%20Soy%20V%C3%ADctor%20de%20EZContact.%20Vi%20que%20te%20registraste.%20%C2%BFTe%20puedo%20ayudar%20a%20configurar%20tu%20asistente%3F
+- **Contactado:** ❌
+
+---
+
 ## 📊 Resumen
 
 | Categoría | Total | Contactados | Pendientes |
 |-----------|-------|-------------|------------|
 | Superlative | 1 | 0 | 1 |
-| EZContact Argentina | 5 | 0 | 5 |
+| EZContact Argentina | 6 | 0 | 6 |
 | EZContact MX (nuevo) | 2 | 0 | 2 |
 | SaludTotal Instagram | 1 | 0 | 1 |
-| **TOTAL** | **9** | **0** | **9** |
+| **TOTAL** | **10** | **0** | **10** |
 
 ---
 
