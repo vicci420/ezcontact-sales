@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Levantamiento — Dr. Sergio Ramírez Ledesma</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Segoe UI', Arial, sans-serif; background: #f0f4f8; color: #1a202c; font-size: 14px; }
+
+  .wrapper { max-width: 860px; margin: 32px auto; padding: 0 16px 60px; }
+
+  /* Header */
+  .header { background: #0f2942; color: white; border-radius: 12px 12px 0 0; padding: 32px 36px; }
+  .header .logo-row { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; }
+  .header .badge { background: #1a6aad; color: white; font-size: 11px; font-weight: 700; letter-spacing: 1px; padding: 4px 10px; border-radius: 20px; text-transform: uppercase; }
+  .header h1 { font-size: 26px; font-weight: 700; line-height: 1.2; }
+  .header p { color: #a0c4e8; font-size: 13px; margin-top: 6px; }
+
+  /* Section card */
+  .card { background: white; border-radius: 0; padding: 28px 36px; border-top: 1px solid #e2e8f0; }
+  .card:last-child { border-radius: 0 0 12px 12px; }
+  .section-title { font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #1a6aad; margin-bottom: 18px; display: flex; align-items: center; gap: 8px; }
+  .section-title::after { content: ''; flex: 1; height: 1px; background: #e2e8f0; }
+
+  /* Grid rows */
+  .field-row { display: grid; grid-template-columns: 200px 1fr; gap: 0; margin-bottom: 0; border-bottom: 1px solid #f0f4f8; }
+  .field-row:last-child { border-bottom: none; }
+  .field-label { padding: 10px 0; color: #718096; font-size: 13px; font-weight: 500; }
+  .field-value { padding: 10px 0; color: #2d3748; }
+  .field-input { padding: 10px 0; }
+  .field-input input, .field-input select {
+    width: 100%; border: 1.5px solid #e2e8f0; border-radius: 6px; padding: 7px 10px;
+    font-size: 13px; color: #2d3748; background: #f8faff;
+    outline: none; transition: border 0.2s;
+  }
+  .field-input input:focus, .field-input select:focus { border-color: #1a6aad; background: #fff; }
+  .field-input input::placeholder { color: #b0bec5; }
+
+  /* Pending badge */
+  .pending { display: inline-flex; align-items: center; gap: 5px; background: #fff8e1; color: #b7791f; font-size: 12px; font-weight: 600; padding: 3px 8px; border-radius: 4px; border: 1px solid #f6e05e; }
+  .done { display: inline-flex; align-items: center; gap: 5px; background: #f0fff4; color: #276749; font-size: 12px; font-weight: 600; padding: 3px 8px; border-radius: 4px; border: 1px solid #9ae6b4; }
+
+  /* Procedures */
+  .proc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .proc-group h4 { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: #0f2942; margin-bottom: 8px; }
+  .proc-group ul { list-style: none; }
+  .proc-group ul li { padding: 4px 0; color: #4a5568; font-size: 13px; }
+  .proc-group ul li::before { content: '→'; color: #1a6aad; margin-right: 6px; font-size: 11px; }
+  .proc-note { background: #fff8e1; border-left: 3px solid #f6ad55; padding: 10px 14px; border-radius: 0 6px 6px 0; font-size: 12px; color: #744210; margin-top: 16px; }
+
+  /* Status table */
+  .status-table { width: 100%; border-collapse: collapse; }
+  .status-table th { text-align: left; font-size: 11px; text-transform: uppercase; letter-spacing: 1px; color: #718096; padding: 8px 12px; background: #f7fafc; }
+  .status-table td { padding: 10px 12px; border-top: 1px solid #f0f4f8; font-size: 13px; }
+  .status-table tr:last-child td { border-bottom: none; }
+
+  /* Pendientes list */
+  .pendientes-list { counter-reset: item; }
+  .pendientes-list li { display: flex; align-items: flex-start; gap: 10px; padding: 10px 0; border-bottom: 1px solid #f0f4f8; font-size: 13px; color: #2d3748; }
+  .pendientes-list li:last-child { border-bottom: none; }
+  .pendientes-list li .num { min-width: 24px; height: 24px; background: #1a6aad; color: white; border-radius: 50%; font-size: 11px; font-weight: 700; display: flex; align-items: center; justify-content: center; }
+
+  /* Bienvenida */
+  .welcome-intro { background: #f0f7ff; border-radius: 8px; padding: 18px 20px; margin-bottom: 20px; font-size: 13px; color: #2d3748; line-height: 1.6; }
+  .welcome-intro strong { color: #0f2942; }
+  .feature-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 20px; }
+  .feature-box { border-radius: 8px; padding: 16px 18px; }
+  .feature-box.green { background: #f0fff4; border: 1px solid #9ae6b4; }
+  .feature-box.red { background: #fff5f5; border: 1px solid #feb2b2; }
+  .feature-box h4 { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px; }
+  .feature-box.green h4 { color: #276749; }
+  .feature-box.red h4 { color: #9b2c2c; }
+  .feature-box ul { list-style: none; }
+  .feature-box ul li { padding: 3px 0; font-size: 12px; color: #4a5568; }
+  .flow-box { background: #f7fafc; border-radius: 8px; padding: 18px 20px; font-size: 12px; color: #4a5568; font-family: monospace; line-height: 2; text-align: center; }
+  .flow-box .arrow { color: #1a6aad; }
+  .contact-box { display: flex; gap: 16px; background: #0f2942; color: white; border-radius: 8px; padding: 18px 20px; margin-top: 20px; align-items: center; }
+  .contact-box .avatar { width: 48px; height: 48px; background: #1a6aad; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 20px; font-weight: 700; flex-shrink: 0; }
+  .contact-box .info { flex: 1; }
+  .contact-box .info strong { font-size: 15px; display: block; }
+  .contact-box .info span { color: #a0c4e8; font-size: 12px; }
+
+  /* Digital presence */
+  .social-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+  .social-item { border: 1px solid #e2e8f0; border-radius: 8px; padding: 12px; text-align: center; }
+  .social-item .sname { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: #718096; margin-bottom: 4px; }
+  .social-item a { font-size: 11px; color: #1a6aad; text-decoration: none; word-break: break-all; }
+  .social-item a:hover { text-decoration: underline; }
+
+  /* Print / Save button */
+  .btn-print { display: block; width: 100%; margin-top: 20px; padding: 13px; background: #1a6aad; color: white; font-size: 14px; font-weight: 700; border: none; border-radius: 8px; cursor: pointer; letter-spacing: 0.5px; }
+  .btn-print:hover { background: #0f2942; }
+
+  @media print {
+    body { background: white; }
+    .wrapper { margin: 0; padding: 0; max-width: 100%; }
+    .btn-print { display: none; }
+    .field-input input, .field-input select { border: 1px solid #ccc; }
+    .header { border-radius: 0; }
+  }
+</style>
+</head>
+<body>
+<div class="wrapper">
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="logo-row">
+      <span class="badge">EZContact</span>
+      <span class="badge" style="background:#0e7f5a">SaludTotal</span>
+      <span style="color:#a0c4e8; font-size:11px; margin-left:auto;">Levantamiento v2 · 2026-05-08</span>
+    </div>
+    <h1>Dr. Sergio Ramírez Ledesma</h1>
+    <p>Cirugía Plástica, Estética y Reconstructiva · Centro de Cirugía Plástica Zurich</p>
+  </div>
+
+  <!-- 1. DATOS DEL CLIENTE -->
+  <div class="card">
+    <div class="section-title">1. Datos del Cliente</div>
+    <div class="field-row"><span class="field-label">Nombre completo</span><span class="field-value">Dr. Sergio Guillermo Ramírez Ledesma</span></div>
+    <div class="field-row"><span class="field-label">Especialidad</span><span class="field-value">Cirugía Plástica, Estética y Reconstructiva</span></div>
+    <div class="field-row"><span class="field-label">Email</span><span class="field-value">drramirezledesma@msn.com</span></div>
+    <div class="field-row"><span class="field-label">Cédula Profesional</span><span class="field-value">2382627</span></div>
+    <div class="field-row"><span class="field-label">Cédula de Especialista</span><span class="field-value">4991225</span></div>
+    <div class="field-row"><span class="field-label">Certificación</span><span class="field-value">CMCPER #1289</span></div>
+    <div class="field-row"><span class="field-label">Años de experiencia</span><span class="field-value">36 años</span></div>
+  </div>
+
+  <!-- 2. CONSULTORIO -->
+  <div class="card">
+    <div class="section-title">2. Consultorio</div>
+    <div class="field-row"><span class="field-label">Nombre</span><span class="field-value">Centro de Cirugía Plástica Zurich</span></div>
+    <div class="field-row"><span class="field-label">Dirección principal</span><span class="field-value">Manuel E. Izaguirre 11, Naucalpan de Juárez, Edo. Méx. C.P. 53100</span></div>
+    <div class="field-row"><span class="field-label">Segunda sede</span><span class="field-value">Ciudad Satélite, Naucalpan</span></div>
+    <div class="field-row"><span class="field-label">Teléfono 1</span><span class="field-value">55 6304 7299</span></div>
+    <div class="field-row"><span class="field-label">Teléfono 2</span><span class="field-value">55 6304 4728</span></div>
+    <div class="field-row"><span class="field-label">Horario L–J</span><span class="field-value">9:00 – 19:00 hrs</span></div>
+    <div class="field-row"><span class="field-label">Horario V–S</span><span class="field-value">10:00 – 13:00 hrs</span></div>
+    <div class="field-row">
+      <span class="field-label">Recepcionista</span>
+      <span class="field-input"><input type="text" placeholder="Nombre y teléfono de la recepcionista / secretaria"></span>
+    </div>
+  </div>
+
+  <!-- 3. AGENDA Y CITAS -->
+  <div class="card">
+    <div class="section-title">3. Agenda y Citas</div>
+    <div class="field-row"><span class="field-label">Plataforma</span><span class="field-value">SaludTotal <span style="color:#b7791f;font-size:12px;">(cuenta por crear)</span></span></div>
+    <div class="field-row"><span class="field-label">Primera consulta</span><span class="field-value"><span class="done">✅ GRATUITA</span></span></div>
+    <div class="field-row">
+      <span class="field-label">Consulta subsecuente</span>
+      <span class="field-input"><input type="text" placeholder="Precio en MXN (ej. $1,500)"></span>
+    </div>
+    <div class="field-row"><span class="field-label">Videoconsulta</span><span class="field-value">Disponible</span></div>
+    <div class="field-row">
+      <span class="field-label">Ciudad Satélite</span>
+      <span class="field-input">
+        <select>
+          <option value="">— Seleccionar —</option>
+          <option>Sede fija (todos los días de agenda)</option>
+          <option>Rotativa — Lunes y Miércoles</option>
+          <option>Rotativa — Martes y Jueves</option>
+          <option>Rotativa — solo Sábados</option>
+          <option>Otro (especificar abajo)</option>
+        </select>
+        <input type="text" placeholder="Especificar días si aplica" style="margin-top:6px;">
+      </span>
+    </div>
+  </div>
+
+  <!-- 4. PAGOS Y SEGUROS -->
+  <div class="card">
+    <div class="section-title">4. Pagos y Seguros</div>
+    <div class="field-row"><span class="field-label">Seguros médicos</span><span class="field-value">No — solo pacientes privados</span></div>
+    <div class="field-row"><span class="field-label">Tarjeta crédito/débito</span><span class="field-value"><span class="done">✅</span></span></div>
+    <div class="field-row"><span class="field-label">Transferencia</span><span class="field-value"><span class="done">✅</span></span></div>
+    <div class="field-row"><span class="field-label">Efectivo</span><span class="field-value"><span class="done">✅</span></span></div>
+    <div class="field-row"><span class="field-label">Mercado Pago</span><span class="field-value"><span class="done">✅</span></span></div>
+    <div class="field-row"><span class="field-label">Financiamiento</span><span class="field-value"><span class="done">✅ disponible</span></span></div>
+  </div>
+
+  <!-- 5. ASISTENTE VIRTUAL -->
+  <div class="card">
+    <div class="section-title">5. Asistente Virtual</div>
+    <div class="field-row">
+      <span class="field-label">Nombre del asistente</span>
+      <span class="field-input"><input type="text" placeholder="Ej. Valeria, Sofía, Gabriela… (voz femenina)"></span>
+    </div>
+    <div class="field-row"><span class="field-label">Canal WhatsApp</span><span class="field-value"><span class="pending">⚠️ Twilio por asignar — Joel/Eduardo</span></span></div>
+    <div class="field-row"><span class="field-label">Canal Voz</span><span class="field-value"><span class="done">✅ +52 55 9963 1597</span></span></div>
+    <div class="field-row">
+      <span class="field-label">Tel. emergencias / transferencia</span>
+      <span class="field-input"><input type="text" placeholder="Número al que se transfiere en post-op urgente"></span>
+    </div>
+    <div class="field-row"><span class="field-label">Idiomas</span><span class="field-value">Español</span></div>
+  </div>
+
+  <!-- 6. PROCEDIMIENTOS -->
+  <div class="card">
+    <div class="section-title">6. Procedimientos</div>
+    <div class="proc-grid">
+      <div class="proc-group">
+        <h4>Cirugía de Cara</h4>
+        <ul>
+          <li>Rinoplastia (cirugía de nariz)</li>
+          <li>Blefaroplastia (cirugía de párpados)</li>
+          <li>Rejuvenecimiento facial</li>
+        </ul>
+      </div>
+      <div class="proc-group">
+        <h4>Cirugía de Mama</h4>
+        <ul>
+          <li>Aumento mamario</li>
+          <li>Reducción mamaria</li>
+          <li>Mastopexia (elevación de mama)</li>
+        </ul>
+      </div>
+      <div class="proc-group">
+        <h4>Contorno Corporal</h4>
+        <ul>
+          <li>Liposucción</li>
+          <li>Abdominoplastia</li>
+        </ul>
+      </div>
+      <div class="proc-group">
+        <h4>No Quirúrgicos</h4>
+        <ul>
+          <li>Endermología (LPG)</li>
+        </ul>
+      </div>
+    </div>
+    <div class="proc-note">
+      ⚠️ <strong>Fuera de lista:</strong> botox, rellenos, BBL, otoplastia y lifting facial NO se ofrecen. El asistente informa al paciente y toma sus datos para que el doctor confirme personalmente.
+    </div>
+  </div>
+
+  <!-- 7. FORMACIÓN -->
+  <div class="card">
+    <div class="section-title">7. Formación y Credenciales</div>
+    <div class="field-row"><span class="field-label">Medicina</span><span class="field-value">Universidad Anáhuac</span></div>
+    <div class="field-row"><span class="field-label">Especialidad Cx. General</span><span class="field-value">Hospital Español</span></div>
+    <div class="field-row"><span class="field-label">Especialidad Cx. Plástica</span><span class="field-value">Hospital Central Sur de Alta Especialidad de PEMEX</span></div>
+    <div class="field-row"><span class="field-label">Certificación</span><span class="field-value">Consejo Mexicano de Cirugía Plástica, Estética y Reconstructiva A.C.</span></div>
+    <div class="field-row"><span class="field-label">Membresía</span><span class="field-value">Asociación Mexicana de Cirugía Plástica, Estética y Reconstructiva</span></div>
+  </div>
+
+  <!-- 8. PRESENCIA DIGITAL -->
+  <div class="card">
+    <div class="section-title">8. Presencia Digital</div>
+    <div class="social-grid">
+      <div class="social-item"><div class="sname">🌐 Web</div><a href="https://www.cirugiaplasticayestetica.com.mx" target="_blank">cirugiaplasticayestetica.com.mx</a></div>
+      <div class="social-item"><div class="sname">📸 Instagram</div><a href="https://www.instagram.com/sergioramirezledesma/" target="_blank">@sergioramirezledesma</a></div>
+      <div class="social-item"><div class="sname">📘 Facebook</div><a href="https://www.facebook.com/sergioguillermoramirezledesma" target="_blank">sergioguillermoramirezledesma</a></div>
+      <div class="social-item"><div class="sname">💼 LinkedIn</div><a href="https://www.linkedin.com/in/sergioguillermoramirezledesma/" target="_blank">sergioguillermoramirezledesma</a></div>
+      <div class="social-item"><div class="sname">▶️ YouTube</div><a href="https://www.youtube.com/channel/UC1oUXWJ4yDXCIJ6asAD-oNA" target="_blank">Canal YouTube</a></div>
+      <div class="social-item"><div class="sname">🐦 X / Twitter</div><a href="https://x.com/plasticacirugia" target="_blank">@plasticacirugia</a></div>
+    </div>
+  </div>
+
+  <!-- 9. ESTADO -->
+  <div class="card">
+    <div class="section-title">9. Estado de Implementación</div>
+    <table class="status-table">
+      <tr><th>Entregable</th><th>Estado</th></tr>
+      <tr><td>Levantamiento</td><td><span class="done">✅ v2 completo</span></td></tr>
+      <tr><td>Prompt WhatsApp</td><td><span class="done">✅ v2 en GitHub</span></td></tr>
+      <tr><td>Prompt Voz</td><td><span class="done">✅ v2 en GitHub</span></td></tr>
+      <tr><td>Cuenta SaludTotal</td><td><span class="pending">⚠️ Por crear</span></td></tr>
+      <tr><td>Número Twilio WA</td><td><span class="pending">⚠️ Joel / Eduardo</span></td></tr>
+      <tr><td>Número Twilio Voz</td><td><span class="done">✅ +52 55 9963 1597</span></td></tr>
+      <tr><td>Conexión EZContact</td><td><span class="pending">⚠️ Depende de Twilio</span></td></tr>
+      <tr><td>Pruebas funcionales</td><td><span class="pending">⚠️ Pendiente</span></td></tr>
+    </table>
+  </div>
+
+  <!-- 10. PENDIENTES -->
+  <div class="card">
+    <div class="section-title">10. Pendientes Críticos</div>
+    <ul class="pendientes-list">
+      <li><span class="num">1</span><span><strong>Nombre del asistente</strong> — voz femenina, definir con el doctor</span></li>
+      <li><span class="num">2</span><span><strong>Precio consulta subsecuente</strong> — confirmar con doctor</span></li>
+      <li><span class="num">3</span><span><strong>Ciudad Satélite</strong> — ¿sede fija o rotativa? ¿qué días?</span></li>
+      <li><span class="num">4</span><span><strong>Recepcionista / secretaria</strong> — nombre y contacto</span></li>
+      <li><span class="num">5</span><span><strong>Número emergencias / transferencia</strong> — para urgencias post-op</span></li>
+      <li><span class="num">6</span><span><strong>Twilio WA + Voz</strong> — Joel / Eduardo lo asignan</span></li>
+    </ul>
+  </div>
+
+  <!-- 11. MANUAL DE BIENVENIDA -->
+  <div class="card">
+    <div class="section-title">11. Manual de Bienvenida</div>
+
+    <div class="welcome-intro">
+      <strong>Dr. Ramírez, bienvenido a EZContact.</strong><br><br>
+      Su nuevo asistente virtual atiende a sus pacientes de forma automática, <strong>24 horas al día, 7 días a la semana</strong>, por WhatsApp y por teléfono — con la misma calidez y discreción que su consultorio merece.
+    </div>
+
+    <div style="margin-bottom:16px;">
+      <div style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#0f2942;margin-bottom:10px;">Canales disponibles</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+        <div style="background:#f0f7ff;border-radius:8px;padding:14px 16px;">
+          <div style="font-size:13px;font-weight:700;color:#0f2942;margin-bottom:4px;">📱 WhatsApp</div>
+          <div style="font-size:12px;color:#4a5568;">Responde mensajes de texto, orienta sobre procedimientos, agenda citas y captura datos de nuevos interesados.</div>
+        </div>
+        <div style="background:#f0f7ff;border-radius:8px;padding:14px 16px;">
+          <div style="font-size:13px;font-weight:700;color:#0f2942;margin-bottom:4px;">📞 Voz</div>
+          <div style="font-size:12px;color:#4a5568;">Atiende llamadas telefónicas con voz femenina natural. Mismo flujo que una recepcionista entrenada.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="feature-grid">
+      <div class="feature-box green">
+        <h4>✅ El asistente SÍ hace</h4>
+        <ul>
+          <li>Responde dudas generales sobre procedimientos</li>
+          <li>Agenda, reagenda y cancela consultas</li>
+          <li>Captura: nombre, teléfono, procedimiento</li>
+          <li>Deriva urgencias post-op como URGENTE</li>
+          <li>Informa horarios, ubicación y formas de pago</li>
+          <li>Comparte Instagram y sitio web si piden resultados</li>
+        </ul>
+      </div>
+      <div class="feature-box red">
+        <h4>❌ El asistente NO hace</h4>
+        <ul>
+          <li>No da diagnósticos médicos</li>
+          <li>No cotiza procedimientos por teléfono</li>
+          <li>No garantiza resultados</li>
+          <li>No atiende seguros médicos</li>
+          <li>No inventa — toma datos para callback del doctor</li>
+          <li>No ofrece procedimientos fuera de la lista</li>
+        </ul>
+      </div>
+    </div>
+
+    <div style="margin-bottom:16px;">
+      <div style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#0f2942;margin-bottom:10px;">Flujo de una cita</div>
+      <div class="flow-box">
+        Paciente escribe o llama
+        <div class="arrow">↓</div>
+        Asistente saluda y pregunta en qué puede ayudar
+        <div class="arrow">↓</div>
+        Empatiza y orienta brevemente sobre el procedimiento
+        <div class="arrow">↓</div>
+        Propone valoración gratuita, sin compromiso
+        <div class="arrow">↓</div>
+        Recopila: nombre · teléfono · procedimiento · ¿nuevo o seguimiento?
+        <div class="arrow">↓</div>
+        Confirma datos repitiéndolos al paciente
+        <div class="arrow">↓</div>
+        Agenda en SaludTotal o pasa a recepcionista
+      </div>
+    </div>
+
+    <div style="margin-bottom:8px;">
+      <div style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#0f2942;margin-bottom:8px;">Primeros pasos</div>
+      <div style="font-size:13px;color:#4a5568;line-height:1.8;">
+        1. Recibirá acceso a <strong>SaludTotal</strong> (expediente + agenda)<br>
+        2. Recibirá el número de <strong>WhatsApp</strong> del asistente para pruebas<br>
+        3. Recibirá el número de <strong>Voz</strong> para pruebas<br>
+        4. Le recomendamos escribir o llamar como si fuera un paciente nuevo<br>
+        5. Si algo no le gusta, lo ajustamos en 24–48 horas hábiles
+      </div>
+    </div>
+
+    <div class="contact-box">
+      <div class="avatar">K</div>
+      <div class="info">
+        <strong>Katia Lozano — Ejecutiva Comercial · EZContact</strong>
+        <span>katia@ezcontact.mx &nbsp;·&nbsp; wa.me/5215523455698</span>
+        <span style="display:block;margin-top:4px;">Cambios y actualizaciones en 24–48 horas hábiles</span>
+      </div>
+    </div>
+  </div>
+
+  <button class="btn-print" onclick="window.print()">🖨️ Imprimir / Guardar como PDF</button>
+
+</div>
+</body>
+</html>

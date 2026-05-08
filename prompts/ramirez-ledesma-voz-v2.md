@@ -237,7 +237,7 @@ Si el paciente está molesto, hay una complicación compleja o la situación sup
 ## [Notas técnicas — NO incluir en el prompt productivo]
 - Email cliente: drramirezledesma@msn.com
 - Instagram: @sergioramirezledesma
-- Número voz asistente: [pendiente — asignar Twilio · Joel/Eduardo]
+- Número voz asistente: +52 55 9963 1597 (activo en EZContact)
 - Plataforma citas: SaludTotal (cuenta pendiente de crear)
 - Nombre asistente: [indefinido — pendiente con doctor]
 - Recepcionista: [nombre pendiente — levantamiento]

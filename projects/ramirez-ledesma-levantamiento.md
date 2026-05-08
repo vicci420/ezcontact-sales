@@ -64,7 +64,7 @@
 |-------|-------|
 | Nombre del asistente | ⚠️ PENDIENTE (indefinido — voz femenina) |
 | Canal WhatsApp | ⚠️ PENDIENTE (número Twilio por asignar — Joel/Eduardo) |
-| Canal Voz | ⚠️ PENDIENTE (número Twilio por asignar) |
+| Canal Voz | ✅ +52 55 9963 1597 (activo en EZContact) |
 | Número emergencias / transferencia | ⚠️ PENDIENTE (confirmar con doctor) |
 | Idiomas | Español |
 
@@ -127,7 +127,7 @@
 | Prompt Voz | ✅ `ramirez-ledesma-voz-v2.md` |
 | Cuenta SaludTotal | ⬜ Pendiente — crear manualmente |
 | Número Twilio WA | ⬜ Pendiente — Joel / Eduardo |
-| Número Twilio Voz | ⬜ Pendiente — Joel / Eduardo |
+| Número Twilio Voz | ✅ +52 55 9963 1597 — activo en EZContact |
 | Conexión EZContact | ⬜ Pendiente (depende de Twilio) |
 | Pruebas funcionales | ⬜ Pendiente |
 
