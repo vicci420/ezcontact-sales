@@ -1,6 +1,6 @@
 # Levantamiento — Dr. Sergio Ramírez Ledesma
 ## SaludTotal + EZContact (WhatsApp + Voz)
-*Versión 1 — 2026-05-08 · Katia Lozano, EZContact*
+*Versión 2 — 2026-05-08 · Katia Lozano, EZContact*
 
 ---
 
@@ -11,7 +11,8 @@
 | Nombre completo | Dr. Sergio Guillermo Ramírez Ledesma |
 | Especialidad | Cirugía Plástica, Estética y Reconstructiva |
 | Email | drramirezledesma@msn.com |
-| Cédula profesional | 4991225 |
+| Cédula Profesional | 2382627 |
+| Cédula de Especialista | 4991225 |
 | Certificación | CMCPER #1289 |
 | Años de experiencia | 36 años |
 
@@ -26,9 +27,9 @@
 | Segunda ubicación | Ciudad Satélite, Naucalpan |
 | Teléfono 1 | 55 6304 7299 |
 | Teléfono 2 | 55 6304 4728 |
-| Horario L-J | 9:00 – 19:00 hrs |
-| Horario V-S | 10:00 – 13:00 hrs |
-| Recepcionista / secretaria | **⚠️ PENDIENTE** |
+| Horario L–J | 9:00 – 19:00 hrs |
+| Horario V–S | 10:00 – 13:00 hrs |
+| Recepcionista / secretaria | ⚠️ PENDIENTE |
 
 ---
 
@@ -38,9 +39,9 @@
 |-------|-------|
 | Plataforma de agenda | SaludTotal (cuenta por crear) |
 | Primera consulta | GRATUITA |
-| Consulta subsecuente | **⚠️ PENDIENTE (confirmar precio)** |
+| Consulta subsecuente | ⚠️ PENDIENTE (confirmar precio) |
 | Videoconsulta | Disponible |
-| ¿Segunda sede fija o rotativa? | **⚠️ PENDIENTE — Ciudad Satélite (¿qué días?)** |
+| Ciudad Satélite ¿fijo o rotativo? | ⚠️ PENDIENTE (¿qué días?) |
 
 ---
 
@@ -61,34 +62,34 @@
 
 | Campo | Valor |
 |-------|-------|
-| Nombre del asistente | **⚠️ PENDIENTE (indefinido — voz femenina)** |
-| Canal WhatsApp | **⚠️ PENDIENTE (número Twilio por asignar — Joel/Eduardo)** |
-| Canal Voz | **⚠️ PENDIENTE (número Twilio por asignar)** |
-| Número emergencias / transferencia | **⚠️ PENDIENTE (confirmar con doctor)** |
+| Nombre del asistente | ⚠️ PENDIENTE (indefinido — voz femenina) |
+| Canal WhatsApp | ⚠️ PENDIENTE (número Twilio por asignar — Joel/Eduardo) |
+| Canal Voz | ⚠️ PENDIENTE (número Twilio por asignar) |
+| Número emergencias / transferencia | ⚠️ PENDIENTE (confirmar con doctor) |
 | Idiomas | Español |
 
 ---
 
 ## 6. PROCEDIMIENTOS
 
-### Cuerpo
-- Liposucción
-- Abdominoplastia (tummy tuck)
-- Aumento de busto (implantes mamarios)
-- Reducción mamaria
-- Levantamiento de glúteos
-
-### Rostro
+### Cirugía de Cara
 - Rinoplastia (cirugía de nariz)
 - Blefaroplastia (cirugía de párpados)
-- Otoplastia (cirugía de orejas)
-- Lifting facial
 - Rejuvenecimiento facial
 
-### No quirúrgicos
-- Toxina botulínica (Botox)
-- Ácido hialurónico (rellenos faciales)
-- Tratamientos estéticos faciales
+### Cirugía de Mama
+- Aumento mamario
+- Reducción mamaria
+- Mastopexia (elevación de mama)
+
+### Contorno Corporal
+- Liposucción
+- Abdominoplastia
+
+### Tratamientos No Quirúrgicos
+- Endermología (tratamiento corporal con LPG)
+
+> Nota: botox, rellenos, BBL, otoplastia y lifting facial NO se ofrecen en este consultorio. El asistente lo indica al paciente y ofrece tomar sus datos para que el doctor confirme.
 
 ---
 
@@ -121,9 +122,9 @@
 
 | Entregable | Estado |
 |-----------|--------|
-| Levantamiento | ✅ v1 completo (pendientes marcados) |
-| Prompt WhatsApp | ✅ `prompts/ramirez-ledesma-whatsapp-v1.md` |
-| Prompt Voz | ✅ `prompts/ramirez-ledesma-voz-v1.md` |
+| Levantamiento | ✅ v2 completo (pendientes marcados) |
+| Prompt WhatsApp | ✅ `ramirez-ledesma-whatsapp-v2.md` |
+| Prompt Voz | ✅ `ramirez-ledesma-voz-v2.md` |
 | Cuenta SaludTotal | ⬜ Pendiente — crear manualmente |
 | Número Twilio WA | ⬜ Pendiente — Joel / Eduardo |
 | Número Twilio Voz | ⬜ Pendiente — Joel / Eduardo |
@@ -132,14 +133,96 @@
 
 ---
 
-## 10. PENDIENTES CRÍTICOS (confirmar con el doctor)
+## 10. PENDIENTES CRÍTICOS
 
-1. **Nombre del asistente** — voz femenina, nombre a definir
-2. **Precio consulta subsecuente**
-3. **Ciudad Satélite** — ¿fijo o rotativo? ¿qué días atiende ahí?
+1. **Nombre del asistente** — voz femenina, nombre a definir con el doctor
+2. **Precio consulta subsecuente** — confirmar con doctor
+3. **Ciudad Satélite** — ¿fijo o rotativo? ¿qué días?
 4. **Recepcionista / secretaria** — nombre y contacto
-5. **Número de emergencias / transferencia humana** — para post-op urgente
-6. **Número WA asistente** — por asignar vía Joel / Eduardo (Twilio)
+5. **Número de emergencias / transferencia humana** — para urgencias post-op
+6. **Número Twilio** WA + Voz — Joel / Eduardo lo asignan
+
+---
+
+## 11. MANUAL DE BIENVENIDA
+### Bienvenido a su Asistente Virtual EZContact
+
+Dr. Ramírez, gracias por confiar en EZContact. A continuación le explicamos cómo funciona su nuevo asistente virtual y qué puede esperar del servicio.
+
+---
+
+### ¿Qué es su asistente virtual?
+
+Es una inteligencia artificial entrenada específicamente para su consultorio. Atiende a sus pacientes de forma automática, 24/7, por dos canales:
+
+**📱 WhatsApp** — responde mensajes de texto, orienta sobre procedimientos, agenda citas y captura datos de nuevos interesados.
+
+**📞 Voz** — atiende llamadas telefónicas con una voz femenina natural, sin sonar como grabación, con el mismo flujo que una recepcionista entrenada.
+
+---
+
+### ¿Qué hace el asistente?
+
+✅ Responde preguntas frecuentes sobre procedimientos (en términos generales)
+✅ Agenda, reagenda y cancela consultas de valoración
+✅ Captura datos del paciente: nombre, teléfono, procedimiento de interés
+✅ Deriva urgencias post-operatorias con marcado URGENTE para su callback
+✅ Informa horarios, ubicación y formas de pago
+✅ Comparte sus redes sociales si el paciente pide ver resultados
+
+---
+
+### ¿Qué NO hace el asistente?
+
+❌ No da diagnósticos médicos
+❌ No cotiza procedimientos (siempre deriva a la consulta)
+❌ No garantiza resultados
+❌ No atiende casos de seguros (informa que es consulta privada)
+❌ No inventa — si no sabe, toma datos para que usted llame de vuelta
+
+---
+
+### ¿Cómo funciona el flujo de una cita?
+
+```
+Paciente escribe / llama
+        ↓
+Asistente saluda y pregunta en qué puede ayudar
+        ↓
+Empatiza, orienta brevemente sobre el procedimiento
+        ↓
+Propone valoración gratuita
+        ↓
+Recopila: nombre, teléfono, procedimiento, ¿nuevo o seguimiento?
+        ↓
+Confirma datos repitiéndolos al paciente
+        ↓
+Agenda en SaludTotal o pasa a recepcionista para confirmar
+```
+
+---
+
+### ¿Cómo solicitar cambios o mejoras?
+
+Si desea actualizar información del asistente (horarios, procedimientos, precios, nombre del asistente), comuníquese con:
+
+**Katia Lozano — EZContact**
+📧 katia@ezcontact.mx
+📱 wa.me/5215523455698
+
+Los cambios se implementan normalmente en 24–48 horas hábiles.
+
+---
+
+### Primeros pasos
+
+Cuando su cuenta esté lista, le enviaremos:
+1. Acceso a SaludTotal (expediente + agenda)
+2. Número de WhatsApp del asistente para pruebas
+3. Número de voz para pruebas
+4. Guía rápida de SaludTotal (cómo ver citas agendadas)
+
+Le recomendamos hacer una prueba enviando un mensaje como si fuera un paciente nuevo. Si algo no le gusta, lo ajustamos de inmediato.
 
 ---
 
