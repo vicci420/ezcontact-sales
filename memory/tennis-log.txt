@@ -80,3 +80,93 @@ Fri Apr 10 12:35:03 UTC 2026: Cron tennis SKIP — weekend
 Fri Apr 10 15:33:55 UTC 2026: Cron tennis SKIP — weekend
 Mon Apr 13 04:03:01 UTC 2026: Cron tennis FAIL — no_courts_available
 Sun Apr 12 22:03:18 CDMX 2026: VERIFICADO — Lunes 2026-04-13 07:00 Cancha 6 Folio 157609 ✅ (encontrado en TusApartados durante trabajo nocturno)
+Mon Apr 20 16:47:10 UTC 2026: Cron tennis FAIL — no_courts_available
+Mon Apr 20 10:47:00 CDMX 2026: HEARTBEAT VERIFICACIÓN — Lunes 2026-04-20 07:00 Cancha 2 Folio 158145 ✅ | Martes 2026-04-21 07:00 Cancha 6 Folio 158209 ✅ — Ambos confirmados en TusApartados
+Tue Apr 21 12:03:37 UTC 2026: Cron tennis FAIL — no_courts_available
+Tue Apr 21 12:05:17 UTC 2026: Cron tennis FAIL — no_courts_available
+Wed Apr 22 12:00:02 UTC 2026: Cron tennis OK — 2026-04-23 07:00 Cancha 3 Folio 158386
+=== Club Junior Tennis Reservation ===
+Date: 2026-04-23 (Jueves)
+Time: 07:00
+Partner: Bruno Jarhani Palomino Ramírez (7600)
+Court priority: [3, 1, 6, 2, 8, 10, 4, 5, 7, 9] (preferred: 3)
+
+✓ Pre-login successful at 5:59 AM — session ready
+⏳ Waiting 58.1 seconds until 6:00:00 AM CDMX...
+✓ It's now 6:00 AM CDMX - GO!
+Trying court 3...
+✓ CLAIMED SUCCESS: Reserved court 3, Folio: 158386
+✓ VERIFIED: Folio 158386 found in Tus Apartados
+
+Result: {'status': 'success', 'court': 3, 'date': '2026-04-23', 'time': '07:00', 'partner': 'Bruno Jarhani Palomino Ramírez', 'folio': '158386', 'verified': True}
+[LOG] Cron tennis OK — 2026-04-23 07:00 Cancha 3 Folio 158386
+Thu Apr 23 12:00:04 UTC 2026: Cron tennis OK — 2026-04-24 07:00 Cancha 3 Folio 158473
+=== Club Junior Tennis Reservation ===
+Date: 2026-04-24 (Viernes)
+Time: 07:00
+Partner: Carlos Alberto Toledo Triana (7238)
+Court priority: [3, 1, 6, 2, 8, 10, 4, 5, 7, 9] (preferred: 3)
+
+✓ Pre-login successful at 5:59 AM — session ready
+⏳ Waiting 58.5 seconds until 6:00:00 AM CDMX...
+✓ It's now 6:00 AM CDMX - GO!
+Trying court 3...
+✓ CLAIMED SUCCESS: Reserved court 3, Folio: 158473
+✓ VERIFIED: Folio 158473 found in Tus Apartados
+
+Result: {'status': 'success', 'court': 3, 'date': '2026-04-24', 'time': '07:00', 'partner': 'Carlos Alberto Toledo Triana', 'folio': '158473', 'verified': True}
+[LOG] Cron tennis OK — 2026-04-24 07:00 Cancha 3 Folio 158473
+Fri Apr 24 11:59:02 UTC 2026: Cron tennis SKIP — weekend
+Tomorrow is weekend - no reservation needed
+
+Result: {'status': 'skip', 'reason': 'weekend'}
+[LOG] Cron tennis SKIP — weekend
+Mon Apr 27 12:00:02 UTC 2026: Cron tennis OK — 2026-04-28 07:00 Cancha 3 Folio 158745
+=== Club Junior Tennis Reservation ===
+Date: 2026-04-28 (Martes)
+Time: 07:00
+Partner: Alejandro Navarro Bernardo (6525)
+Court priority: [3, 1, 6, 2, 8, 10, 4, 5, 7, 9] (preferred: 3)
+
+✓ Pre-login successful at 5:59 AM — session ready
+⏳ Waiting 57.9 seconds until 6:00:00 AM CDMX...
+✓ It's now 6:00 AM CDMX - GO!
+Trying court 3...
+✓ CLAIMED SUCCESS: Reserved court 3, Folio: 158745
+✓ VERIFIED: Folio 158745 found in Tus Apartados
+
+Result: {'status': 'success', 'court': 3, 'date': '2026-04-28', 'time': '07:00', 'partner': 'Alejandro Navarro Bernardo', 'folio': '158745', 'verified': True}
+[LOG] Cron tennis OK — 2026-04-28 07:00 Cancha 3 Folio 158745
+Tue Apr 28 12:00:08 UTC 2026: Cron tennis OK — 2026-04-29 07:00 Cancha 3 Folio 158832
+=== Club Junior Tennis Reservation ===
+Date: 2026-04-29 (Miércoles)
+Time: 07:00
+Partner: Sophia (7427)
+Court priority: [3, 1, 6, 2, 8, 10, 4, 5, 7, 9] (preferred: 3)
+
+✓ Pre-login successful at 5:59 AM — session ready
+⏳ Waiting 57.8 seconds until 6:00:00 AM CDMX...
+✓ It's now 6:00 AM CDMX - GO!
+Trying court 3...
+✓ CLAIMED SUCCESS: Reserved court 3, Folio: 158832
+✓ VERIFIED: Folio 158832 found in Tus Apartados
+
+Result: {'status': 'success', 'court': 3, 'date': '2026-04-29', 'time': '07:00', 'partner': 'Sophia', 'folio': '158832', 'verified': True}
+[LOG] Cron tennis OK — 2026-04-29 07:00 Cancha 3 Folio 158832
+Wed Apr 29 12:00:02 UTC 2026: Cron tennis OK — 2026-04-30 07:00 Cancha 3 Folio 158933
+⚡ Override activo para 2026-04-30: usando Bruno Jarhani Palomino Ramírez
+=== Club Junior Tennis Reservation ===
+Date: 2026-04-30 (Jueves)
+Time: 07:00
+Partner: Bruno Jarhani Palomino Ramírez (7600)
+Court priority: [3, 1, 6, 2, 8, 10, 4, 5, 7, 9] (preferred: 3)
+
+✓ Pre-login successful at 5:59 AM — session ready
+⏳ Waiting 57.8 seconds until 6:00:00 AM CDMX...
+✓ It's now 6:00 AM CDMX - GO!
+Trying court 3...
+✓ CLAIMED SUCCESS: Reserved court 3, Folio: 158933
+✓ VERIFIED: Folio 158933 found in Tus Apartados
+
+Result: {'status': 'success', 'court': 3, 'date': '2026-04-30', 'time': '07:00', 'partner': 'Bruno Jarhani Palomino Ramírez', 'folio': '158933', 'verified': True}
+[LOG] Cron tennis OK — 2026-04-30 07:00 Cancha 3 Folio 158933
